@@ -11,7 +11,7 @@
 
     <title>
         
-        Search的博客 | Search&#39;s Blog
+        【分布式】分布式环境中三种Session管理方法的使用场景及优缺点 - Search的博客 | Search&#39;s Blog
         
     </title>
 
@@ -88,6 +88,10 @@
         </ul>
     </div>
     
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、Session-Replication-方式管理-即session复制"><span class="toc-text">一、Session Replication 方式管理 (即session复制)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、Session-Sticky-方式管理"><span class="toc-text">二、Session Sticky 方式管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、缓存集中式管理"><span class="toc-text">三、缓存集中式管理</span></a></li></ol>
+</div>
+    
 </div>
 
 
@@ -113,95 +117,60 @@
         
 
 
-<!-- 归档列表 -->
+<div class="post-container">
+    <div class="post-title">
+        【分布式】分布式环境中三种Session管理方法的使用场景及优缺点
+    </div>
 
-<div class="archives-container">
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2018-10-14 19:58:39</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#Session" title="Session">Session</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
 
-<div class="one-tag-list">
-                <span class="fa fa-calendar-times-o listing-seperator" id="2018">
-                    <span class="tag-text">2018</span>
-                </span>
-    <ul>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li>
-            <span>12-15</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2018/12/15/【Javaweb】购物车实现/">
-                        <span>
-                            【Javaweb】购物车实现
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li>
-            <span>12-15</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2018/12/15/【Java】线程/">
-                        <span>
-                            【Java】线程
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li>
-            <span>12-15</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2018/12/15/【Java】开发过程中的内存溢出及解决办法/">
-                        <span>
-                            【Java】开发过程中的内存溢出及解决办法
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li>
-            <span>12-15</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2018/12/15/【分布式】单点登录系统/">
-                        <span>
-                            【分布式】单点登录系统
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li>
-            <span>10-14</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2018/10/14/【分布式】分布式环境中三种Session管理方法的使用场景及优缺点/">
-                        <span>
-                            【分布式】分布式环境中三种Session管理方法的使用场景及优缺点
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
+    </div>
+    <div class="post-content ">
+        <p>在分布式环境，管理Session通常使用下面三种方式：</p>
+<h2 id="一、Session-Replication-方式管理-即session复制"><a href="#一、Session-Replication-方式管理-即session复制" class="headerlink" title="一、Session Replication 方式管理 (即session复制)"></a>一、Session Replication 方式管理 (即session复制)</h2><p>简介：将一台机器上的Session数据广播复制到集群中其余机器上</p>
+<p>使用场景：机器较少，网络流量较小</p>
+<p>优点：实现简单、配置较少、当网络中有机器Down掉时不影响用户访问</p>
+<p>缺点：广播式复制到其余机器有一定廷时，带来一定网络开销</p>
+<h2 id="二、Session-Sticky-方式管理"><a href="#二、Session-Sticky-方式管理" class="headerlink" title="二、Session Sticky 方式管理"></a>二、Session Sticky 方式管理</h2><p>简介：即粘性Session、当用户访问集群中某台机器后，强制指定后续所有请求均落到此机器上</p>
+<p>使用场景：机器数适中、对稳定性要求不是非常苛刻</p>
+<p>优点：实现简单、配置方便、没有额外网络开销</p>
+<p>缺点：网络中有机器Down掉时、用户Session会丢失、容易造成单点故障</p>
+<h2 id="三、缓存集中式管理"><a href="#三、缓存集中式管理" class="headerlink" title="三、缓存集中式管理"></a>三、缓存集中式管理</h2><p>简介：将Session存入分布式缓存集群中的某台机器上，当用户访问不同节点时先从缓存中拿Session信息</p>
+<p>使用场景：集群中机器数多、网络环境复杂</p>
+<p>优点：可靠性好</p>
+<p>缺点：实现复杂、稳定性依赖于缓存的稳定性、Session信息放入缓存时要有合理的策略写入</p>
 
-    </ul>
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
 </div>
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
 
+        <div id="lv-container">
+        </div>
+
+    </div>
 </div>
     </div>
 </div>
@@ -279,12 +248,31 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.json"
     window.hexo_root = "/"
-    window.isPost = false
+    window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
+
+    <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+        */
+        if( '' || '')
+        var disqus_config = function () {
+            this.page.url = '';  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://airclouds-blog.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
 
 
 

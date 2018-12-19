@@ -11,7 +11,7 @@
 
     <title>
         
-        Search的博客 | Search&#39;s Blog
+        【分布式】单点登录系统 - Search的博客 | Search&#39;s Blog
         
     </title>
 
@@ -59,7 +59,7 @@
                     <span>主页</span>
                 </a>
             </li>
-            <li class="active">
+            <li>
                 <a href="/tags">
                     <i class="iconfont icon-biaoqian1"></i>
                     <span>标签</span>
@@ -88,6 +88,10 @@
         </ul>
     </div>
     
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-什么是单点登录系统"><span class="toc-text">1.什么是单点登录系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-创建单点登录系统"><span class="toc-text">2.创建单点登录系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用的技术："><span class="toc-text">使用的技术：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#具体实现"><span class="toc-text">具体实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#登录拦截器"><span class="toc-text">登录拦截器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#拦截器的处理流程："><span class="toc-text">拦截器的处理流程：</span></a></li></ol>
+</div>
+    
 </div>
 
 
@@ -113,95 +117,63 @@
         
 
 
-<!-- 归档列表 -->
+<div class="post-container">
+    <div class="post-title">
+        【分布式】单点登录系统
+    </div>
 
-<div class="archives-container">
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2018-12-15 13:58:39</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#SSO" title="SSO">SSO</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
 
-<div class="one-tag-list">
-                <span class="fa fa-calendar-times-o listing-seperator" id="2018">
-                    <span class="tag-text">2018</span>
-                </span>
-    <ul>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li>
-            <span>12-15</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2018/12/15/【Javaweb】购物车实现/">
-                        <span>
-                            【Javaweb】购物车实现
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li>
-            <span>12-15</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2018/12/15/【Java】线程/">
-                        <span>
-                            【Java】线程
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li>
-            <span>12-15</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2018/12/15/【Java】开发过程中的内存溢出及解决办法/">
-                        <span>
-                            【Java】开发过程中的内存溢出及解决办法
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li>
-            <span>12-15</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2018/12/15/【分布式】单点登录系统/">
-                        <span>
-                            【分布式】单点登录系统
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li>
-            <span>10-14</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2018/10/14/【分布式】分布式环境中三种Session管理方法的使用场景及优缺点/">
-                        <span>
-                            【分布式】分布式环境中三种Session管理方法的使用场景及优缺点
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>摘要： 本文主要介绍单点登录系统。</p>
+</blockquote>
+<h2 id="1-什么是单点登录系统"><a href="#1-什么是单点登录系统" class="headerlink" title="1.什么是单点登录系统"></a>1.什么是单点登录系统</h2><p>SSO英文全称Single Sign On，单点登录。SSO是在多个应用系统中，用户只需要登录一次就可以访问所有相互信任的应用系统。它包括可以将这次主要的登录映射到其他应用中用于同一个用户的登录的机制。它是目前比较流行的企业业务整合的解决方案之一。<br> SSO单点登录系统就是使用redis模拟Session（Key-Value），实现Session的统一管理。</p>
+<h2 id="2-创建单点登录系统"><a href="#2-创建单点登录系统" class="headerlink" title="2.创建单点登录系统"></a>2.创建单点登录系统</h2><h2 id="使用的技术："><a href="#使用的技术：" class="headerlink" title="使用的技术："></a>使用的技术：</h2><p>1、Mybatis</p>
+<p>2、Spring</p>
+<p>3、Springmvc</p>
+<p>4、Jedis</p>
+<h2 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h2><p>SSO表现层<br>        定义了三个处理器，分别用于注册、登录、外部调用，查看用户登录状态：    </p>
+<h2 id="登录拦截器"><a href="#登录拦截器" class="headerlink" title="登录拦截器"></a>登录拦截器</h2><p>分析<br>当用户提交订单时此时必须要求用户登录，可以使用拦截器来实现。</p>
+<h2 id="拦截器的处理流程："><a href="#拦截器的处理流程：" class="headerlink" title="拦截器的处理流程："></a>拦截器的处理流程：</h2><p>1、拦截请求url</p>
+<p>2、从cookie中取token</p>
+<p>3、如果没有toke跳转到登录页面。</p>
+<p>4、取到token，需要调用sso系统的服务查询用户信息。</p>
+<p>5、如果用户session已经过期，跳转到登录页面</p>
+<p>6、如果没有过期，放行。</p>
 
-    </ul>
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
 </div>
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
 
+        <div id="lv-container">
+        </div>
+
+    </div>
 </div>
     </div>
 </div>
@@ -279,12 +251,31 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.json"
     window.hexo_root = "/"
-    window.isPost = false
+    window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
+
+    <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+        */
+        if( '' || '')
+        var disqus_config = function () {
+            this.page.url = '';  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://airclouds-blog.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
 
 
 
