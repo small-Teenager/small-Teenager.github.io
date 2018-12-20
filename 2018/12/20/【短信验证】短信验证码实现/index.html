@@ -11,7 +11,7 @@
 
     <title>
         
-        Search的博客 | Search&#39;s Blog
+        【短信验证】短信验证码流程 - Search的博客 | Search&#39;s Blog
         
     </title>
 
@@ -53,7 +53,7 @@
     </div>
     <div class="contents" id="nav-content">
         <ul>
-            <li class="active">
+            <li>
                 <a href="/">
                     <i class="iconfont icon-shouye1"></i>
                     <span>主页</span>
@@ -88,6 +88,10 @@
         </ul>
     </div>
     
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-为什么需要验证码"><span class="toc-text">1.为什么需要验证码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-短信验证流程"><span class="toc-text">2.短信验证流程</span></a></li></ol>
+</div>
+    
 </div>
 
 
@@ -111,134 +115,61 @@
     <div class="index-middle">
         <!-- Main Content -->
         
-<div class="post-preview-container" style="min-height: 576px">
-    
-    <div class="post-preview">
-        <div class="post-time">2018-12-20</div>
-        <div class="post-info">
-            <a href="/2018/12/20/【短信验证】短信验证码实现/">
-                <h3>
-                    【短信验证】短信验证码流程
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#短信验证" title="短信验证">短信验证</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2018-12-15</div>
-        <div class="post-info">
-            <a href="/2018/12/15/【Javaweb】购物车实现/">
-                <h3>
-                    【Javaweb】购物车实现
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#cart" title="cart">cart</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2018-12-15</div>
-        <div class="post-info">
-            <a href="/2018/12/15/【Java】线程/">
-                <h3>
-                    【Java】线程
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#thread" title="thread">thread</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2018-12-15</div>
-        <div class="post-info">
-            <a href="/2018/12/15/【Java】开发过程中的内存溢出及解决办法/">
-                <h3>
-                    【Java】开发过程中的内存溢出及解决办法
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#Java" title="Java">Java</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2018-12-15</div>
-        <div class="post-info">
-            <a href="/2018/12/15/【SSO】单点登录系统/">
-                <h3>
-                    【分布式】单点登录系统
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#SSO" title="SSO">SSO</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2018-10-14</div>
-        <div class="post-info">
-            <a href="/2018/10/14/【Session】分布式环境中三种Session管理方法的使用场景及优缺点/">
-                <h3>
-                    【分布式】分布式环境中三种Session管理方法的使用场景及优缺点
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#Session" title="Session">Session</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-</div>
-<ul class="pager">
-    
-    
-</ul>
 
+
+<div class="post-container">
+    <div class="post-title">
+        【短信验证】短信验证码流程
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2018-12-20 20:16:38</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#短信验证" title="短信验证">短信验证</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>摘要： 本文主要介绍短信验证码。</p>
+</blockquote>
+<h2 id="1-为什么需要验证码"><a href="#1-为什么需要验证码" class="headerlink" title="1.为什么需要验证码"></a>1.为什么需要验证码</h2><p>短信验证码用于保护网站。试想一下，如果有人使用作弊设备，在您的网站上多次注册，登录，发布和评论不仅会严重影响网站的运行，导致网站缓慢打开，还会导致大量垃圾内容，这将不可避免地导致网站体验。如果平台用户的注册不再需要输入手机验证码，商务平台每天将受到不同的攻击，运营和维护成本将大幅增加，并且使用用户移动互联网将大大减少。垃圾邮件的影响和规模将无法预测。对于平台，服务器资源是有限的。如果有人恶意登录，或使用软件发送垃圾邮件，则会导致服务器崩溃并最终拖动平台。因此，在网站的操作中，需要添加短信验证码功能。</p>
+<p>其次，短信验证码是由商家向用户发出的用于验证身份的证书。短信验证码平台通过手机短信发送验证码，这是验证用户真实身份的最常用，最安全的方式。通过手机号码验证注册会员，您可以确认手机号码属于我。提高网站用户注册的质量，并可以更有效地管理网站的注册用户。通过手机验证码，商家可以更方便地获取用户信息，并与他们进行交互，随时与他们保持联系和沟通。第三，用户的手机号码也可以绑定，派生出更多的短信验证码应用。例如手机密码恢复，登录保护，交易确认，手机发送指令，手机账号和用户注册账号等可以同步登录，同步通讯录，同步更多手机相关应用。短信验证码的使用有效提高了用户账号的安全性，是电子商务和行业网站不可或缺的一部分。高质量的短信验证码对于改善用户体验具有不可替代的作用。</p>
+<h2 id="2-短信验证流程"><a href="#2-短信验证流程" class="headerlink" title="2.短信验证流程"></a>2.短信验证流程</h2><p>1、构造手机验证码，如生成一个6位的随机数字串；</p>
+<p>2、使用接口向短信平台发送手机号和验证码，然后短信平台再把验证码发送到制定手机号上；</p>
+<p>3、将手机号验证码、操作时间存入Session中，作为后面验证使用；</p>
+<p>4、接收用户填写的验证码、手机号及其他注册数据；</p>
+<p>5、对比提交的验证码与Session中的验证码是否一致，同时判断提交动作是否在有效期内；</p>
+<p>6、验证码正确且在有效期内，请求通过，处理相应的业务</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
     </div>
 </div>
 
@@ -315,12 +246,31 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.json"
     window.hexo_root = "/"
-    window.isPost = false
+    window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
+
+    <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+        */
+        if( '' || '')
+        var disqus_config = function () {
+            this.page.url = '';  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://airclouds-blog.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
 
 
 
