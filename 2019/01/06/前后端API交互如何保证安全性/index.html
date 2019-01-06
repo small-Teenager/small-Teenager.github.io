@@ -11,7 +11,7 @@
 
     <title>
         
-        Search的博客 | Search&#39;s Blog
+        前后端API交互如何保证安全性 - Search的博客 | Search&#39;s Blog
         
     </title>
 
@@ -53,7 +53,7 @@
     </div>
     <div class="contents" id="nav-content">
         <ul>
-            <li class="active">
+            <li>
                 <a href="/">
                     <i class="iconfont icon-shouye1"></i>
                     <span>主页</span>
@@ -88,6 +88,10 @@
         </ul>
     </div>
     
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-为什么要保证安全性"><span class="toc-text">1.为什么要保证安全性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-如何保证API调用数据时的安全性"><span class="toc-text">2.如何保证API调用数据时的安全性</span></a></li></ol>
+</div>
+    
 </div>
 
 
@@ -111,178 +115,60 @@
     <div class="index-middle">
         <!-- Main Content -->
         
-<div class="post-preview-container" style="min-height: 576px">
-    
-    <div class="post-preview">
-        <div class="post-time">2019-01-06</div>
-        <div class="post-info">
-            <a href="/2019/01/06/前后端API交互如何保证安全性/">
-                <h3>
-                    前后端API交互如何保证安全性
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#安全" title="安全">安全</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2018-12-24</div>
-        <div class="post-info">
-            <a href="/2018/12/24/【Netty】NIO-编程/">
-                <h3>
-                    【Netty】NIO 编程
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#Netty" title="Netty">Netty</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2018-12-24</div>
-        <div class="post-info">
-            <a href="/2018/12/24/【netty】为什么选择netty/">
-                <h3>
-                    【Netty】为什么选择Netty
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#netty" title="netty">netty</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2018-12-20</div>
-        <div class="post-info">
-            <a href="/2018/12/20/【短信验证】短信验证码实现/">
-                <h3>
-                    【短信验证】短信验证码流程
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#短信验证" title="短信验证">短信验证</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2018-12-15</div>
-        <div class="post-info">
-            <a href="/2018/12/15/【Javaweb】购物车实现/">
-                <h3>
-                    【Javaweb】购物车实现
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#cart" title="cart">cart</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2018-12-15</div>
-        <div class="post-info">
-            <a href="/2018/12/15/【Java】线程/">
-                <h3>
-                    【Java】线程
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#thread" title="thread">thread</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2018-12-15</div>
-        <div class="post-info">
-            <a href="/2018/12/15/【Java】开发过程中的内存溢出及解决办法/">
-                <h3>
-                    【Java】开发过程中的内存溢出及解决办法
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#Java" title="Java">Java</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2018-12-15</div>
-        <div class="post-info">
-            <a href="/2018/12/15/【SSO】单点登录系统/">
-                <h3>
-                    【分布式】单点登录系统
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#SSO" title="SSO">SSO</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-</div>
-<ul class="pager">
-    
-    
-    <li class="next">
-        <a href="/page/2/">Older Posts &rarr;</a>
-    </li>
-    
-</ul>
 
+
+<div class="post-container">
+    <div class="post-title">
+        前后端API交互如何保证安全性
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-01-06 20:56:22</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#安全" title="安全">安全</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>摘要： 本文主要介绍前后端API交互如何保证安全性</p>
+</blockquote>
+<h2 id="1-为什么要保证安全性"><a href="#1-为什么要保证安全性" class="headerlink" title="1.为什么要保证安全性"></a>1.为什么要保证安全性</h2><p>前后端分离的开发方式，以接口为标准进行推动，定义好接口后，各自开发自己的功能，最后进行联调整合。无论是原生app的开发还是webapp的开发<br>还是pc软件，只要是前后端分离模式的软件，就避免不了调用后端接口进行数据交互。</p>
+<p>不安全的接口，通过网络，只要进行抓包就可以清楚地知道请求的数据，如果是敏感信息，稍有不慎就会被不法分子盗用。</p>
+<h2 id="2-如何保证API调用数据时的安全性"><a href="#2-如何保证API调用数据时的安全性" class="headerlink" title="2.如何保证API调用数据时的安全性"></a>2.如何保证API调用数据时的安全性</h2><p>1、通信时使用https协议</p>
+<p>2、请求签名，防止参数被修改</p>
+<p>3、身份确认机制，每次请求都要验证身份是否合法</p>
+<p>4、对所有的请求和响应都进行加解密操作</p>
+<p>等等</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
     </div>
 </div>
 
@@ -359,11 +245,25 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.json"
     window.hexo_root = "/"
-    window.isPost = false
+    window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script src="/js/gitment.js"></script>
+<script>
+    var gitment = new Gitment({
+        id: '前后端API交互如何保证安全性',
+        owner: 'small-Teenager',
+        repo: 'small-Teenager.github.io',
+        oauth: {
+            client_id: '0c679f56f3ec0015102b',
+            client_secret: '786e45b4d51f2847484facade3aed068f2c57e2a',
+        },
+    })
+    gitment.render('comment-container')
+</script>
 
 
 
