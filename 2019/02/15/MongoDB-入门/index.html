@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Search的博客">
+    <meta name="keyword" content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        MongoDB 入门 - Search的博客 | Search&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> No man ever steps in the same river twice </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/avatar.png">
+        </div>
+        <div class="name">
+            <i>Search</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li>
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、MongoDB简介"><span class="toc-text">1、MongoDB简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2、什么是MongoDB"><span class="toc-text">1.2、什么是MongoDB</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3、MongoDB特点"><span class="toc-text">1.3、MongoDB特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4、MongoDB体系结构"><span class="toc-text">1.4、MongoDB体系结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5、数据类型"><span class="toc-text">1.5、数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、走进MongoDB"><span class="toc-text">2、走进MongoDB</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> No man ever steps in the same river twice </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        MongoDB 入门
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-02-15 19:31:57</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#MongoDB" title="MongoDB">MongoDB</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>摘要：文档型数据库MongoDB</p>
+</blockquote>
+<p><a href="http://www.runoob.com/mongodb/mongodb-tutorial.html" target="_blank" rel="noopener">MongoDB菜鸟教程</a></p>
+<p><a href="https://www.mongodb.com/" target="_blank" rel="noopener">MongoDB官网</a></p>
+<h2 id="1、MongoDB简介"><a href="#1、MongoDB简介" class="headerlink" title="1、MongoDB简介"></a>1、MongoDB简介</h2><p>（1）数据量大</p>
+<p>（2）写入操作频繁</p>
+<p>（3）价值较低</p>
+<p>对于这样的数据，我们更适合使用MongoDB来实现数据的存储</p>
+<h2 id="1-2、什么是MongoDB"><a href="#1-2、什么是MongoDB" class="headerlink" title="1.2、什么是MongoDB"></a>1.2、什么是MongoDB</h2><p>MongoDB 是一个跨平台的，面向文档的数据库，是当前 NoSQL 数据库产品中最热<br>门的一种。它介于关系数据库和非关系数据库之间，是非关系数据库当中功能最丰富，最像关<br>系数据库的产品。它支持的数据结构非常松散，是类似 JSON 的 BSON 格式，因此可以<br>存储比较复杂的数据类型。</p>
+<h2 id="1-3、MongoDB特点"><a href="#1-3、MongoDB特点" class="headerlink" title="1.3、MongoDB特点"></a>1.3、MongoDB特点</h2><p>MongoDB 最大的特点是他支持的查询语言非常强大，其语法有点类似于面向对象<br>的查<br>询语言，几乎可以实现类似关系数据库单表查询的绝大部分功能，而且还支持对数据建 立索<br>引。它是一个面向集合的,模式自由的文档型数据库。<br>具体特点总结如下：</p>
+<p>（1）面向集合存储，易于存储对象类型的数据<br>    （2）模式自由<br>    （3）支持动态查询<br>    （4）支持完全索引，包含内部对象<br>    （5）支持复制和故障恢复<br>    （6）使用高效的二进制数据存储，包括大型对象（如视频等）<br>    （7）自动处理碎片，以支持云计算层次的扩展性<br>    （8）支持 Python，PHP，Ruby，Java，C，C#，Javascript，Perl 及 C++语言的驱动程序，<br>    社区中也提供了对 Erlang 及.NET 等平台的驱动程序<br>    （9）文件存储格式为 BSON（一种 JSON 的扩展）</p>
+<h2 id="1-4、MongoDB体系结构"><a href="#1-4、MongoDB体系结构" class="headerlink" title="1.4、MongoDB体系结构"></a>1.4、MongoDB体系结构</h2><p>MongoDB   的逻辑结构是一种层次结构。主要由：<br>文档(document)、集合(collection)、数据库(database)这三部分组成的。逻辑结构是面 向用户的，用户使用 MongoDB 开发应用程序使用的就是逻辑结构。<br>（1）MongoDB 的文档（document），相当于关系数据库中的一行记录。<br>（2）多个文档组成一个集合（collection），相当于关系数据库的表。<br>（3）多个集合（collection），逻辑上组织在一起，就是数据库（database）。<br>（4）一个 MongoDB 实例支持多个数据库（database）。<br>文档(document)、集合(collection)、数据库(database)的层次结构如下图:</p>
+<p><img src="/img/imgs/mongodb层次结构.png" alt=""></p>
+<p>下表是MongoDB与MySQL数据库逻辑结构概念的对比</p>
+<table>
+<thead>
+<tr>
+<th>MongoDb</th>
+<th style="text-align:center">关系型数据库Mysql</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据库(databases)</td>
+<td style="text-align:center">数据库(databases)</td>
+</tr>
+<tr>
+<td>集合(collections)</td>
+<td style="text-align:center">表(table)</td>
+</tr>
+<tr>
+<td>文档(document)</td>
+<td style="text-align:center">行(row)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-5、数据类型"><a href="#1-5、数据类型" class="headerlink" title="1.5、数据类型"></a>1.5、数据类型</h2><p>基本数据类型</p>
+<p>null：用于表示空值或者不存在的字段，{“x”:null}<br>布尔型：布尔类型有两个值true和false，{“x”:true}<br>数值：shell默认使用64位浮点型数值。{“x”：3.14}或{“x”：3}。对于整型值，可以使用<br>NumberInt（4字节符号整数）或NumberLong（8字节符号整数），<br>{“x”:NumberInt(“3”)}{“x”:NumberLong(“3”)}<br>字符串：UTF-8字符串都可以表示为字符串类型的数据，{“x”：“呵呵”}<br>日期：日期被存储为自新纪元依赖经过的毫秒数，不存储时区，{“x”:new Date()}</p>
+<p>正则表达式：查询时，使用正则表达式作为限定条件，语法与JavaScript的正则表达式相 同，{“x”:/[abc]/}<br>数组：数据列表或数据集可以表示为数组，{“x”： [“a“，“b”,”c”]}<br>内嵌文档：文档可以嵌套其他文档，被嵌套的文档作为值来处理，{“x”:{“y”:3 }}<br>对象Id：对象id是一个12字节的字符串，是文档的唯一标识，{“x”: objectId() }<br>二进制数据：二进制数据是一个任意字节的字符串。它不能直接在shell中使用。如果要 将非utf-字符保存到数据库中，二进制数据是唯一的方式。<br>代码：查询和文档中可以包括任何JavaScript代码，{“x”:function(){/…/}}</p>
+<h2 id="2、走进MongoDB"><a href="#2、走进MongoDB" class="headerlink" title="2、走进MongoDB"></a>2、走进MongoDB</h2><p>2.1、MongoDB安装与启动</p>
+<p>Docker 环境下MongoDB的安装</p>
+<p><a href="http://www.runoob.com/docker/docker-install-mongodb.html" target="_blank" rel="noopener">Docker 安装MongoDB</a></p>
+<p>MongoDB 常用命令</p>
+<p>选择和创建数据库 ：</p>
+<pre><code>use DATABASE_NAME
+</code></pre><p>查看所有数据库 ：</p>
+<pre><code>show dbs
+</code></pre><p>插入和查询文档 ：</p>
+<p>插入</p>
+<pre><code>db.COLLECTION_NAME.insert(document)
+</code></pre><p>查询</p>
+<pre><code>db.COLLECTION_NAME.find(query, projection)
+</code></pre><blockquote>
+<blockquote>
+<p>query ：可选，使用查询操作符指定查询条件</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>projection ：可选，使用投影操作符指定返回的键。查询时返回文档中所有键值， 只需省略该参数即可（默认省略）。</p>
+</blockquote>
+</blockquote>
+<p>  返回符合条件的第一条数据 </p>
+<pre><code>db.COLLECTION_NAME.findOne()
+</code></pre><p>  返回指定条数的记录 </p>
+<pre><code>db.COLLECTION_NAME.find().limit(n)
+</code></pre><p>修改和删除文档<br>修改</p>
+<pre><code>db.COLLECTION_NAME.update(条件,修改后的数据)
+</code></pre><p> 删除</p>
+<pre><code>db.col.remove(条件)   
+db.col.remove({}) //删除所有数据
+</code></pre><p> 统计条数</p>
+<pre><code>db.col.count()
+</code></pre><p>Java 操作MongoDB</p>
+<p><a href="http://www.runoob.com/mongodb/mongodb-java.html" target="_blank" rel="noopener">MongoDB Java</a></p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+        <li>
+            <a target="_blank" href="http://weibo.com/ipsearch">
+                            <span class="fa-stack fa-lg">
+                                  <i class="iconfont icon-weibo"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+            <a target="_blank" href="https://github.com/small-teenager">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a target="_blank" href="https://www.linkedin.com/in/yaodong-zhang-51592714a">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-linkedin"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="https://www.10000h.top">10000H</a></span>
+        <span>/</span>
+        
+        <span><a href="https://niexiaotao.com">Xiaotao&#39;s Page</a></span>
+        <span>/</span>
+        
+        <span><a href="#">It helps SEO</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script src="/js/gitment.js"></script>
+<script>
+    var gitment = new Gitment({
+        id: 'MongoDB 入门',
+        owner: 'small-Teenager',
+        repo: 'small-Teenager.github.io',
+        oauth: {
+            client_id: '0c679f56f3ec0015102b',
+            client_secret: '786e45b4d51f2847484facade3aed068f2c57e2a',
+        },
+    })
+    gitment.render('comment-container')
+</script>
+
+
+
+
+</html>
