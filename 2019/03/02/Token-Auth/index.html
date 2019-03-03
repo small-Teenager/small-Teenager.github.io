@@ -11,7 +11,7 @@
 
     <title>
         
-        Search的博客 | Search&#39;s Blog
+        Token Auth - Search的博客 | Search&#39;s Blog
         
     </title>
 
@@ -53,7 +53,7 @@
     </div>
     <div class="contents" id="nav-content">
         <ul>
-            <li class="active">
+            <li>
                 <a href="/">
                     <i class="iconfont icon-shouye1"></i>
                     <span>主页</span>
@@ -88,6 +88,10 @@
         </ul>
     </div>
     
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、Token简介"><span class="toc-text">1、Token简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、Token流程"><span class="toc-text">2、Token流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、Token-Auth-的优点"><span class="toc-text">2、Token Auth 的优点</span></a></li></ol>
+</div>
+    
 </div>
 
 
@@ -111,98 +115,69 @@
     <div class="index-middle">
         <!-- Main Content -->
         
-<div class="post-preview-container" style="min-height: 576px">
-    
-    <div class="post-preview">
-        <div class="post-time">2018-12-15</div>
-        <div class="post-info">
-            <a href="/2018/12/15/【Java】线程/">
-                <h3>
-                    【Java】线程
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#thread" title="thread">thread</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2018-12-15</div>
-        <div class="post-info">
-            <a href="/2018/12/15/【Java】开发过程中的内存溢出及解决办法/">
-                <h3>
-                    【Java】开发过程中的内存溢出及解决办法
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#Java" title="Java">Java</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2018-12-15</div>
-        <div class="post-info">
-            <a href="/2018/12/15/【SSO】单点登录系统/">
-                <h3>
-                    【分布式】单点登录系统
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#SSO" title="SSO">SSO</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2018-10-14</div>
-        <div class="post-info">
-            <a href="/2018/10/14/【Session】分布式环境中三种Session管理方法的使用场景及优缺点/">
-                <h3>
-                    【分布式】分布式环境中三种Session管理方法的使用场景及优缺点
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#Session" title="Session">Session</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-</div>
-<ul class="pager">
-    
-    <li class="previous">
-        <a href="/">&larr; Newer Posts</a>
-    </li>
-    
-    
-</ul>
 
+
+<div class="post-container">
+    <div class="post-title">
+        Token Auth
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-03-02 22:26:03</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#Token" title="Token">Token</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>摘要：Token</p>
+</blockquote>
+<h2 id="1、Token简介"><a href="#1、Token简介" class="headerlink" title="1、Token简介"></a>1、Token简介</h2><p>Token 是一种权限认证机制，在服务端不需要存储用户的登陆记录。</p>
+<h2 id="2、Token流程"><a href="#2、Token流程" class="headerlink" title="2、Token流程"></a>2、Token流程</h2><p>（1）客户端使用name password 请求登陆</p>
+<p>（2）服务端接收请求，去验证name password</p>
+<p>（3）验证成功会，服务端会签发一个Token 在把这个Token发送给服务端</p>
+<p>（4）客户端收到Token 并把它存储起来，如放入header、Cookie</p>
+<p>（5）客户端每次向服务端请求资源时需要携带服务端签发的Token</p>
+<p>（6）服务端收到请求，然后去验证客户端请求里携带的Token，验证成功，返回客户端请求的资源</p>
+<h2 id="2、Token-Auth-的优点"><a href="#2、Token-Auth-的优点" class="headerlink" title="2、Token Auth 的优点"></a>2、Token Auth 的优点</h2><p>支持跨域访问: Cookie是不允许垮域访问的，这一点对Token机制是不存在的，前提是传输的用户认证信息通过HTTP头传输.</p>
+<p>无状态(也称：服务端可扩展行):Token机制在服务端不需要存储session信息，因为Token 自身包含了所有登录用户的信息，只需要在客户端的cookie或本地介质存储状态信息.</p>
+<p>更适用CDN: 可以通过内容分发网络请求你服务端的所有资料（如：javascript，HTML,图片等），而你的服务端只要提供API即可.</p>
+<p>去耦: 不需要绑定到一个特定的身份验证方案。Token可以在任何地方生成，只要在你的API被调用的时候，你可以进行Token生成调用即可.</p>
+<p>更适用于移动应用: 当你的客户端是一个原生平台（iOS, Android，Windows 8等）时，Cookie是不被支持的（你需要通过Cookie容器进行处理），这时采用Token认证机制就会简单得多。</p>
+<p>CSRF:因为不再依赖于Cookie，所以你就不需要考虑对CSRF（跨站请求伪造）的防范。</p>
+<p>性能: 一次网络往返时间（通过数据库查询session信息）总比做一次HMACSHA256计算 的Token验证和解析要费时得多.</p>
+<p>不需要为登录页面做特殊处理: 如果你使用Protractor 做功能测试的时候，不再需要为登录页面做特殊处理.</p>
+<p>基于标准化:你的API可以采用标准化的 JSON Web Token (JWT). 这个标准已经存在多个后端库（.NET, Ruby, Java,Python, PHP）和多家公司的支持（如：Firebase,Google, Microsoft）.</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
     </div>
 </div>
 
@@ -279,11 +254,25 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.json"
     window.hexo_root = "/"
-    window.isPost = false
+    window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script src="/js/gitment.js"></script>
+<script>
+    var gitment = new Gitment({
+        id: 'Token Auth',
+        owner: 'small-Teenager',
+        repo: 'small-Teenager.github.io',
+        oauth: {
+            client_id: '0c679f56f3ec0015102b',
+            client_secret: '786e45b4d51f2847484facade3aed068f2c57e2a',
+        },
+    })
+    gitment.render('comment-container')
+</script>
 
 
 
