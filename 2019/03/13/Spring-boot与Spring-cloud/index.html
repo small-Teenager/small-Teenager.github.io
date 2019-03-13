@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Search的博客">
+    <meta name="keyword" content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        Spring boot与Spring cloud - Search的博客 | Search&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> No man ever steps in the same river twice </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/avatar.png">
+        </div>
+        <div class="name">
+            <i>Search</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li>
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、什么是Spring-Boot"><span class="toc-text">1、什么是Spring Boot</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、什么是Spring-Cloud"><span class="toc-text">2、什么是Spring Cloud</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、浅析Spring-boot与Spring-cloud-之间的关系"><span class="toc-text">2、浅析Spring boot与Spring cloud 之间的关系</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> No man ever steps in the same river twice </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        Spring boot与Spring cloud
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-03-13 20:06:09</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#Spring boot" title="Spring boot">Spring boot</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>摘要：Spring boot与Spring cloud</p>
+</blockquote>
+<h2 id="1、什么是Spring-Boot"><a href="#1、什么是Spring-Boot" class="headerlink" title="1、什么是Spring Boot"></a>1、什么是Spring Boot</h2><p>Spring Boot是整合了框架的框架，它让一切依赖都变得有序简单，你不用操心A.jar是什么版本，又依赖哪些版本的jar，它默认配置了很多框架的使用方式，就像 maven整合了所有的jar包，Spring Boot整合了所有的框架，第三方库的功能你拿着就能用。<br>Spring Boot的核心思想就是约定大于配置，一切由内定的约束来自动完成。采用 Spring Boot可以大大的简化你的开发模式，节省大部分照搬照抄的成本，通过少量的代码就能创建一个独立的，它都有对应的组件支持。</p>
+<p>它是由 Pivotal团队提供的全新框架,其设计目的是用来简化新 Spring应用的初始搭建以及开发过程。该框架使用了特定的方式来进行配置,从而使开发人员不再需要定义样板化的配置。</p>
+<p>Spring boot 是 Spring 的一套快速配置脚手架，可以基于spring boot 快速开发单个微服务，Spring Boot，看名字就知道是Spring的引导，就是用于启动Spring的，使得Spring的学习和使用变得快速无痛。不仅适合替换原有的工程结构，更适合微服务开发。</p>
+<p>以启动一个带Hibernate的Spring MVC为例。</p>
+<ol>
+<li><p>依赖太多了，而且要注意版本兼容。这个应用，要添加10-20个依赖，Spring相关的包10多个，然后是Hibernate包，Spring与Hibernate整合包，日志包，json包一堆，而且要注意版本兼容性。</p>
+</li>
+<li><p>配置太多了，要配置注解驱动，要配置数据库连接池，要配置Hibernate，要配置事务管理器，要配置Spring MVC的资源映射，要在web.xml中配置启动Spring和Spring MVC等</p>
+</li>
+</ol>
+<p>3.部署和运行麻烦。要部署到tomcat里面。不能直接用java命令运行。</p>
+<p>太多重复和大家都一样的配置了。</p>
+<p>Spring Boot的哲学就是约定大于配置。既然很多东西都是一样的，为什么还要去配置。</p>
+<ol>
+<li>通过starter和依赖管理解决依赖问题。</li>
+<li>通过自动配置，解决配置复杂问题。</li>
+<li>通过内嵌web容器，由应用启动web容器，而不是web容器启动应用，来解决部署运行问题。</li>
+</ol>
+<h2 id="2、什么是Spring-Cloud"><a href="#2、什么是Spring-Cloud" class="headerlink" title="2、什么是Spring Cloud"></a>2、什么是Spring Cloud</h2><p>Spring Cloud是一套分布式服务治理的框架,既然它是一套服务治理的框架，那么它本身不会提供具体功能性的操作，更专注于服务之间的通讯、熔断、监控等。因此就需要很多的组件来支持一套功能。<br>微服务是可以独立部署、水平扩展、独立访问(或者有独立的数据库)的服务单元， Spring Cloud就是这些微服务的大管家，采用了微服务这种架构之后，项目的数量会非常多， Spring Cloud做为大管家就需要提供各种方案来维护整个生态。</p>
+<p>Spring Cloud基于Spring Boot，为微服务体系开发中的架构问题，提供了一整套的解决方案——服务注册与发现，服务消费，服务保护与熔断，网关，分布式调用追踪，分布式配置管理等。</p>
+<p>Spring Cloud是一个基于Spring Boot实现的云应用开发工具；Spring boot专注于快速、方便集成的单个个体，Spring Cloud是关注全局的服务治理框架；spring boot使用了默认大于配置的理念，很多集成方案已经帮你选择好了，能不配置就不配置，Spring Cloud很大的一部分是基于Spring boot来实现。</p>
+<h2 id="2、浅析Spring-boot与Spring-cloud-之间的关系"><a href="#2、浅析Spring-boot与Spring-cloud-之间的关系" class="headerlink" title="2、浅析Spring boot与Spring cloud 之间的关系"></a>2、浅析Spring boot与Spring cloud 之间的关系</h2><p>你可以把spring boot的官方的包分为两类，一种是为了搭建一个服务用的，比如hibernate jpa，比如 message。另外一种含有cloud关键字的，是为了各个spring boot之前管理和使用的包。</p>
+<p>因为当把集群、CI等方法集中进来一起考虑的时候，这件事情就复杂了。</p>
+<p>多个小有服务整合成的大服务，要有一个消息总线来用于互相通知和调用，要有一个服务发现程序来管理某个小服务上线可用，同时在服务离线时也要能处理，各个小服务要尽量各自独立，还要考虑服务的依赖性，集群的负载均衡，配置文件的分离。</p>
+<p>再把CI和Docker拿进来一起考虑的话，更乱。</p>
+<p>但我认为这样完成的一个服务是更具有可插拔性，更容易维护的。而且遵循了上面的cloud方案的话，在服务的健壮性上面也很强。</p>
+<p>写到这里对于新接触的我认为可以先从单独的spring boot程序开始入门，当要添加一个新功能时，考虑拆分成另外服务。两个程序间可以通过 jmx或是 其它消息中间件或是rest通讯。最后实现了一个各自独立的功能集群。</p>
+<p>总结一句：Spring boot可以离开Spring Cloud独立使用开发项目，但是Spring Cloud离不开Spring boot，属于依赖的关系</p>
+<p>SpringCloud是Spring为微服务架构思想做的一个一站式实现。从某种程度是可以简单的理解为，微服务是一个概念、一个项目开发的架构思想。SpringCloud是微服务架构的一种java实现。<br>SpringCloud是基于SpringBoot的一套实现微服务的框架。它提供了微服务开发所需的配置管理、服务发现、断路器、智能路由、微代理、控制总线、全局锁、决策竞选、分布式会话和集群状态管理等组件。最重要的是，跟SpringBoot框架一起使用的话，会让你开发微服务架构的云服务非常方便。</p>
+<p>SpringCloud五大核心组件</p>
+<pre><code>服务注册发现-Netflix Eureka
+配置中心 - spring cloud config
+负载均衡-Netflix Ribbon
+断路器 - Netflix Hystrix
+路由(网关) - Netflix Zuul
+</code></pre>
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+        <li>
+            <a target="_blank" href="http://weibo.com/ipsearch">
+                            <span class="fa-stack fa-lg">
+                                  <i class="iconfont icon-weibo"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+            <a target="_blank" href="https://github.com/small-teenager">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a target="_blank" href="https://www.linkedin.com/in/yaodong-zhang-51592714a">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-linkedin"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="http://melye.github.io/">Melye</a></span>
+        <span>/</span>
+        
+        <span><a href="https://niexiaotao.com">Xiaotao&#39;s Page</a></span>
+        <span>/</span>
+        
+        <span><a href="#">It helps SEO</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script src="/js/gitment.js"></script>
+<script>
+    var gitment = new Gitment({
+        id: 'Spring boot与Spring cloud',
+        owner: 'small-Teenager',
+        repo: 'small-Teenager.github.io',
+        oauth: {
+            client_id: '0c679f56f3ec0015102b',
+            client_secret: '786e45b4d51f2847484facade3aed068f2c57e2a',
+        },
+    })
+    gitment.render('comment-container')
+</script>
+
+
+
+
+</html>
