@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Search的博客">
+    <meta name="keyword" content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        如何应对接口机故障 - Search的博客 | Search&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> Still on the road, yearning for freedom and dreams. </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/avatar.png">
+        </div>
+        <div class="name">
+            <i>Search</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li>
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#导致接口级故障的原因一般有下面几种："><span class="toc-text">导致接口级故障的原因一般有下面几种：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#内部原因"><span class="toc-text">内部原因</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#外部原因"><span class="toc-text">外部原因</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决接口级故障的核心思想"><span class="toc-text">解决接口级故障的核心思想</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#降级"><span class="toc-text">降级</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#熔断"><span class="toc-text">熔断</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#限流"><span class="toc-text">限流</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#排队"><span class="toc-text">排队</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> Still on the road, yearning for freedom and dreams. </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        如何应对接口机故障
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-11-04 17:51:22</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#架构" title="架构">架构</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <ul>
+<li>接口级故障的典型表现就是系统并没有宕机，网络也没有中断，但业务却出现了问题。例<br>如，业务响应缓慢、大量访问超时、大量访问出现异常（给用户弹出提示“无法连接数据<br>库”），这类问题的主要原因在于系统压力过大、负载太高，导致无法快速处理业务请求，<br>由此引发更多的后续问题。例如，最常见的数据库慢查询将数据库的服务器资源耗尽，导致<br>读写超时，业务读写数据库时要么无法连接数据库、要么超时，最终用户看到的现象就是访<br>问很慢，一会访问抛出异常，一会访问又是正常结果。</li>
+</ul>
+<h2 id="导致接口级故障的原因一般有下面几种："><a href="#导致接口级故障的原因一般有下面几种：" class="headerlink" title="导致接口级故障的原因一般有下面几种："></a>导致接口级故障的原因一般有下面几种：</h2><h3 id="内部原因"><a href="#内部原因" class="headerlink" title="内部原因"></a>内部原因</h3><ul>
+<li>程序 bug 导致死循环，某个接口导致数据库慢查询，程序逻辑不完善导致耗尽内存等。</li>
+</ul>
+<h3 id="外部原因"><a href="#外部原因" class="headerlink" title="外部原因"></a>外部原因</h3><ul>
+<li>黑客攻击、促销或者抢购引入了超出平时几倍甚至几十倍的用户，第三方系统大量请求，第<br>三方系统响应缓慢等。</li>
+</ul>
+<h3 id="解决接口级故障的核心思想"><a href="#解决接口级故障的核心思想" class="headerlink" title="解决接口级故障的核心思想"></a>解决接口级故障的核心思想</h3><ul>
+<li>优先保证核心业务和优先保证绝大部分用户</li>
+</ul>
+<h2 id="降级"><a href="#降级" class="headerlink" title="降级"></a>降级</h2><ul>
+<li><p>降级指系统将某些业务或者接口的功能降低，可以是只提供部分功能，也可以是完全停掉所<br>有功能。例如，论坛可以降级为只能看帖子，不能发帖子；也可以降级为只能看帖子和评<br>论，不能发评论；而 App 的日志上传接口，可以完全停掉一段时间，这段时间内 App 都<br>不能上传日志。</p>
+</li>
+<li><p>降级的核心思想就是丢车保帅，优先保证核心业务。例如，对于论坛来说，90% 的流量是<br>看帖子，那我们就优先保证看帖的功能；对于一个 App 来说，日志上传接口只是一个辅助<br>的功能，故障时完全可以停掉。</p>
+</li>
+<li><p>常见的实现降级的方式有：<br>简单来说，就是系统预留了后门用于降级操作。例如，系统提供一个降级 URL，当访问这<br>个 URL 时，就相当于执行降级指令，具体的降级指令通过 URL 的参数传入即可。这种方<br>案有一定的安全隐患，所以也会在 URL 中加入密码这类安全措施。<br>系统后门降级的方式实现成本低，但主要缺点是如果服务器数量多，需要一台一台去操作，<br>效率比较低，这在故障处理争分夺秒的场景下是比较浪费时间的。</p>
+</li>
+</ul>
+<h2 id="熔断"><a href="#熔断" class="headerlink" title="熔断"></a>熔断</h2><ul>
+<li><p>熔断和降级是两个比较容易混淆的概念，因为单纯从名字上看好像都有禁止某个功能的意<br>思，但其实内在含义是不同的，原因在于降级的目的是应对系统自身的故障，而熔断的目的<br>是应对依赖的外部系统故障的情况。</p>
+</li>
+<li><p>假设一个这样的场景：A 服务的 X 功能依赖 B 服务的某个接口，当 B 服务的接口响应很慢<br>的时候，A 服务的 X 功能响应肯定也会被拖慢，进一步导致 A 服务的线程都被卡在 X 功能<br>处理上，此时 A 服务的其他功能都会被卡住或者响应非常慢。这时就需要熔断机制了，<br>即：A 服务不再请求 B 服务的这个接口，A 服务内部只要发现是请求 B 服务的这个接口就<br>立即返回错误，从而避免 A 服务整个被拖慢甚至拖死。</p>
+</li>
+<li><p>熔断机制实现的关键是需要有一个统一的 API 调用层，由 API 调用层来进行采样或者统<br>计，如果接口调用散落在代码各处就没法进行统一处理了。</p>
+</li>
+<li><p>熔断机制实现的另外一个关键是阈值的设计，例如 1 分钟内 30% 的请求响应时间超过 1<br>秒就熔断，这个策略中的“1 分钟”“30%”“1 秒”都对最终的熔断效果有影响。</p>
+</li>
+</ul>
+<h2 id="限流"><a href="#限流" class="headerlink" title="限流"></a>限流</h2><ul>
+<li><p>降级是从系统功能优先级的角度考虑如何应对故障，而限流则是从用户访问压力的角度来考<br>虑如何应对故障。限流指只允许系统能够承受的访问量进来，超出系统访问能力的请求将被<br>丢弃。</p>
+</li>
+<li><p>虽然“丢弃”这个词听起来让人不太舒服，但保证一部分请求能够正常响应，总比全部请求<br>都不能响应要好得多。</p>
+</li>
+<li><p>限流一般都是系统内实现的，常见的限流方式可以分为两类：基于请求限流和基于资源限<br>流。</p>
+</li>
+<li><p>基于请求限流指从外部访问的请求角度考虑限流，常见的方式有：限制总量、限制时间量。<br>限制总量的方式是限制某个指标的累积上限，常见的是限制当前系统服务的用户总量，例如<br>某个直播间限制总用户数上限为 100 万，超过 100 万后新的用户无法进入；某个抢购活动<br>商品数量只有 100 个，限制参与抢购的用户上限为 1 万个，1 万以后的用户直接拒绝。限<br>制时间量指限制一段时间内某个指标的上限，例如，1 分钟内只允许 10000 个用户访问，<br>每秒请求峰值最高为 10 万。</p>
+</li>
+<li><p>无论是限制总量还是限制时间量，共同的特点都是实现简单，但在实践中面临的主要问题是<br>比较难以找到合适的阈值，例如系统设定了 1 分钟 10000 个用户，但实际上 6000 个用户<br>的时候系统就扛不住了；也可能达到 1 分钟 10000 用户后，其实系统压力还不大，但此时<br>已经开始丢弃用户访问了。</p>
+</li>
+<li><p>即使找到了合适的阈值，基于请求限流还面临硬件相关的问题。例如一台 32 核的机器和<br>64 核的机器处理能力差别很大，阈值是不同的，可能有的技术人员以为简单根据硬件指标<br>进行数学运算就可以得出来，实际上这样是不可行的，64 核的机器比 32 核的机器，业务<br>处理性能并不是 2 倍的关系，可能是 1.5 倍，甚至可能是 1.1 倍。</p>
+</li>
+<li><p>为了找到合理的阈值，通常情况下可以采用性能压测来确定阈值，但性能压测也存在覆盖场<br>景有限的问题，可能出现某个性能压测没有覆盖的功能导致系统压力很大；另外一种方式是<br>基于请求限流<br>限制总量的方式是限制某个指标的累积上限，常见的是限制当前系统服务的用户总量，例如<br>某个直播间限制总用户数上限为 100 万，超过 100 万后新的用户无法进入；某个抢购活动<br>商品数量只有 100 个，限制参与抢购的用户上限为 1 万个，1 万以后的用户直接拒绝。限<br>制时间量指限制一段时间内某个指标的上限，例如，1 分钟内只允许 10000 个用户访问，<br>每秒请求峰值最高为 10 万。</p>
+</li>
+</ul>
+<h2 id="排队"><a href="#排队" class="headerlink" title="排队"></a>排队</h2><ul>
+<li>排队实际上是限流的一个变种，限流是直接拒绝用户，排队是让用户等待一段时间，全世界<br>最有名的排队当属 12306 网站排队了。排队虽然没有直接拒绝用户，但用户等了很长时间<br>后进入系统，体验并不一定比限流好。</li>
+<li>由于排队需要临时缓存大量的业务请求，单个系统内部无法缓存这么多数据，一般情况下，<br>排队需要用独立的系统去实现。</li>
+</ul>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+        <li>
+            <a target="_blank" href="http://weibo.com/ipsearch">
+                            <span class="fa-stack fa-lg">
+                                  <i class="iconfont icon-weibo"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+            <a target="_blank" href="https://github.com/small-teenager">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a target="_blank" href="https://www.linkedin.com/in/yaodong-zhang-51592714a">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-linkedin"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="http://melye.github.io/">Melye</a></span>
+        <span>/</span>
+        
+        <span><a href="https://niexiaotao.com">Xiaotao&#39;s Page</a></span>
+        <span>/</span>
+        
+        <span><a href="#">It helps SEO</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script src="/js/gitment.js"></script>
+<script>
+    var gitment = new Gitment({
+        id: '如何应对接口机故障',
+        owner: 'small-Teenager',
+        repo: 'small-Teenager.github.io',
+        oauth: {
+            client_id: '0c679f56f3ec0015102b',
+            client_secret: '786e45b4d51f2847484facade3aed068f2c57e2a',
+        },
+    })
+    gitment.render('comment-container')
+</script>
+
+
+
+
+</html>
