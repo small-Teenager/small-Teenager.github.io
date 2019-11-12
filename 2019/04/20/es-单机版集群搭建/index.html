@@ -143,46 +143,11 @@
 <p>es 单机版集群搭建</p>
 <p>  主要配置文件<br>   –elasticsearch.yml es配置文件<br>   –jvm.options jvm相关的配置 内存大小等等<br>   –log4j2.properties 日志系统定义<br>   es 集群 主从<br>   head 插件-web管理器<br>   logstash –数据库与Elasticsearch同步索引</p>
 <p>集群搭建</p>
-<p>   1 安装jdk<br>   2 安装es 将es拷贝3份</p>
+<p>   1 安装jdk</p>
+<p>   2 安装es 将es拷贝3份</p>
 <p>   3 集群搭建demo、本机测试只需将192.168.35.124换成自己电脑ip即可</p>
-<pre><code>
-master
-
-  cluster.name: notice-application  # 集群名称集群节点cluster.name需一致
-  node.name: master   #节点名称
-  node.master: true
-  network.host: 192.168.35.124    # 当前节点的IP地址
-  # network.bind_host: 192.168.11.21
-  http.port: 9200  # 对外提供服务的端口，9300为集群服务
-  transport.tcp.port: 9300
-  discovery.zen.ping.unicast.hosts: [&quot;192.168.35.124:9300&quot;,&quot;192.168.35.124:9310&quot;,&quot;192.168.35.124:9320&quot;]
-  # 集群个节点IP地址
-  discovery.zen.minimum_master_nodes: 2    # 为了避免脑裂，集群节点数最少为 半数+1
-
-slave1
-
-  cluster.name: notice-application
-  node.name: slave1
-  # network.publish_host: 192.168.11.21
-  # network.bind_host: 192.168.11.21
-  network.host: 192.168.35.124
-  http.port: 9210
-  transport.tcp.port: 9310
-  discovery.zen.ping.unicast.hosts: [&quot;192.168.35.124:9300&quot;,&quot;192.168.35.124:9310&quot;,&quot;192.168.35.124:9320&quot;]
-
-slave2
-
-  cluster.name: notice-application
-  node.name: slave2
-  # network.publish_host: 192.168.11.21
-  # network.bind_host: 192.168.11.21
-  network.host: 192.168.35.124
-  http.port: 9220
-  transport.tcp.port: 9320
-  discovery.zen.ping.unicast.hosts: [&quot;192.168.35.124:9300&quot;,&quot;192.168.35.124:9310&quot;,&quot;192.168.35.124:9320&quot;]
-
-
-</code></pre><p>  启动master、slave1、slave2 3个节点</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="selector-tag">master</span></span><br><span class="line"></span><br><span class="line">  <span class="selector-tag">cluster</span><span class="selector-class">.name</span>: <span class="selector-tag">notice-application</span>  # 集群名称集群节点<span class="selector-tag">cluster</span><span class="selector-class">.name</span>需一致</span><br><span class="line">  <span class="selector-tag">node</span><span class="selector-class">.name</span>: <span class="selector-tag">master</span>   #节点名称</span><br><span class="line">  <span class="selector-tag">node</span><span class="selector-class">.master</span>: <span class="selector-tag">true</span></span><br><span class="line">  <span class="selector-tag">network</span><span class="selector-class">.host</span>: 192<span class="selector-class">.168</span><span class="selector-class">.35</span><span class="selector-class">.124</span>    # 当前节点的<span class="selector-tag">IP</span>地址</span><br><span class="line">  # <span class="selector-tag">network</span><span class="selector-class">.bind_host</span>: 192<span class="selector-class">.168</span><span class="selector-class">.11</span><span class="selector-class">.21</span></span><br><span class="line">  <span class="selector-tag">http</span><span class="selector-class">.port</span>: 9200  # 对外提供服务的端口，9300为集群服务</span><br><span class="line">  <span class="selector-tag">transport</span><span class="selector-class">.tcp</span><span class="selector-class">.port</span>: 9300</span><br><span class="line">  <span class="selector-tag">discovery</span><span class="selector-class">.zen</span><span class="selector-class">.ping</span><span class="selector-class">.unicast</span><span class="selector-class">.hosts</span>: <span class="selector-attr">["192.168.35.124:9300","192.168.35.124:9310","192.168.35.124:9320"]</span></span><br><span class="line">  # 集群个节点<span class="selector-tag">IP</span>地址</span><br><span class="line">  <span class="selector-tag">discovery</span><span class="selector-class">.zen</span><span class="selector-class">.minimum_master_nodes</span>: 2    # 为了避免脑裂，集群节点数最少为 半数+1</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line"><span class="selector-tag">slave1</span></span><br><span class="line"> </span><br><span class="line">  <span class="selector-tag">cluster</span><span class="selector-class">.name</span>: <span class="selector-tag">notice-application</span></span><br><span class="line">  <span class="selector-tag">node</span><span class="selector-class">.name</span>: <span class="selector-tag">slave1</span></span><br><span class="line">  # <span class="selector-tag">network</span><span class="selector-class">.publish_host</span>: 192<span class="selector-class">.168</span><span class="selector-class">.11</span><span class="selector-class">.21</span></span><br><span class="line">  # <span class="selector-tag">network</span><span class="selector-class">.bind_host</span>: 192<span class="selector-class">.168</span><span class="selector-class">.11</span><span class="selector-class">.21</span></span><br><span class="line">  <span class="selector-tag">network</span><span class="selector-class">.host</span>: 192<span class="selector-class">.168</span><span class="selector-class">.35</span><span class="selector-class">.124</span></span><br><span class="line">  <span class="selector-tag">http</span><span class="selector-class">.port</span>: 9210</span><br><span class="line">  <span class="selector-tag">transport</span><span class="selector-class">.tcp</span><span class="selector-class">.port</span>: 9310</span><br><span class="line">  <span class="selector-tag">discovery</span><span class="selector-class">.zen</span><span class="selector-class">.ping</span><span class="selector-class">.unicast</span><span class="selector-class">.hosts</span>: <span class="selector-attr">["192.168.35.124:9300","192.168.35.124:9310","192.168.35.124:9320"]</span></span><br><span class="line">	</span><br><span class="line"><span class="selector-tag">slave2</span></span><br><span class="line"></span><br><span class="line">  <span class="selector-tag">cluster</span><span class="selector-class">.name</span>: <span class="selector-tag">notice-application</span></span><br><span class="line">  <span class="selector-tag">node</span><span class="selector-class">.name</span>: <span class="selector-tag">slave2</span></span><br><span class="line">  # <span class="selector-tag">network</span><span class="selector-class">.publish_host</span>: 192<span class="selector-class">.168</span><span class="selector-class">.11</span><span class="selector-class">.21</span></span><br><span class="line">  # <span class="selector-tag">network</span><span class="selector-class">.bind_host</span>: 192<span class="selector-class">.168</span><span class="selector-class">.11</span><span class="selector-class">.21</span></span><br><span class="line">  <span class="selector-tag">network</span><span class="selector-class">.host</span>: 192<span class="selector-class">.168</span><span class="selector-class">.35</span><span class="selector-class">.124</span></span><br><span class="line">  <span class="selector-tag">http</span><span class="selector-class">.port</span>: 9220</span><br><span class="line">  <span class="selector-tag">transport</span><span class="selector-class">.tcp</span><span class="selector-class">.port</span>: 9320</span><br><span class="line">  <span class="selector-tag">discovery</span><span class="selector-class">.zen</span><span class="selector-class">.ping</span><span class="selector-class">.unicast</span><span class="selector-class">.hosts</span>: <span class="selector-attr">["192.168.35.124:9300","192.168.35.124:9310","192.168.35.124:9320"]</span></span><br></pre></td></tr></table></figure>
+<p>  启动master、slave1、slave2 3个节点</p>
 <p>  浏览器输入 <a href="http://192.168.35.124:9200/_cat/nodes?v" target="_blank" rel="noopener">http://192.168.35.124:9200/_cat/nodes?v</a> 查看集群 显示如下：则集群搭建成功</p>
 <p>  <img src="/img/elasticsearch.png" alt=""></p>
 
