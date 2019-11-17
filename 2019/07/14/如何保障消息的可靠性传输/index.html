@@ -89,7 +89,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1）生产者弄丢了数据"><span class="toc-text">1）生产者弄丢了数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2）rabbitmq弄丢了数据"><span class="toc-text">2）rabbitmq弄丢了数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3）消费端弄丢了数据"><span class="toc-text">3）消费端弄丢了数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4）小结"><span class="toc-text">4）小结</span></a></li></ol>
 </div>
     
 </div>
@@ -141,23 +141,26 @@
 <p>摘要： 本文主要介绍如何保证消息的可靠性传输（如何处理消息丢失的问题）？</p>
 </blockquote>
 <p>1.丢数据，mq一般分为两种，要么是mq自己弄丢了，要么是我们消费的时候弄丢了。咱们从rabbitmq来分析一下吧</p>
-<p>1）生产者弄丢了数据</p>
-<p>生产者将数据发送到rabbitmq的时候，可能数据就在半路给搞丢了，因为网络啥的问题，都有可能。</p>
+<h1 id="1）生产者弄丢了数据"><a href="#1）生产者弄丢了数据" class="headerlink" title="1）生产者弄丢了数据"></a>1）生产者弄丢了数据</h1><p>生产者将数据发送到rabbitmq的时候，可能数据就在半路给搞丢了，因为网络啥的问题，都有可能。</p>
 <p>此时可以选择用rabbitmq提供的事务功能，就是生产者发送数据之前开启rabbitmq事务（channel.txSelect），然后发送消息，如果消息没有成功被rabbitmq接收到，那么生产者会收到异常报错，此时就可以回滚事务（channel.txRollback），然后重试发送消息；如果收到了消息，那么可以提交事务（channel.txCommit）。但是问题是，rabbitmq事务机制一搞，基本上吞吐量会下来，因为太耗性能。</p>
 <p>所以一般来说，如果你要确保说写rabbitmq的消息别丢，可以开启confirm模式，在生产者那里设置开启confirm模式之后，你每次写的消息都会分配一个唯一的id，然后如果写入了rabbitmq中，rabbitmq会给你回传一个ack消息，告诉你说这个消息ok了。如果rabbitmq没能处理这个消息，会回调你一个nack接口，告诉你这个消息接收失败，你可以重试。而且你可以结合这个机制自己在内存里维护每个消息id的状态，如果超过一定时间还没接收到这个消息的回调，那么你可以重发。</p>
 <p>事务机制和cnofirm机制最大的不同在于，事务机制是同步的，你提交一个事务之后会阻塞在那儿，但是confirm机制是异步的，你发送个消息之后就可以发送下一个消息，然后那个消息rabbitmq接收了之后会异步回调你一个接口通知你这个消息接收到了。</p>
 <p>所以一般在生产者这块避免数据丢失，都是用confirm机制的。</p>
-<p>2）rabbitmq弄丢了数据</p>
-<p>就是rabbitmq自己弄丢了数据，这个你必须开启rabbitmq的持久化，就是消息写入之后会持久化到磁盘，哪怕是rabbitmq自己挂了，恢复之后会自动读取之前存储的数据，一般数据不会丢。除非极其罕见的是，rabbitmq还没持久化，自己就挂了，可能导致少量数据会丢失的，但是这个概率较小。</p>
+<h1 id="2）rabbitmq弄丢了数据"><a href="#2）rabbitmq弄丢了数据" class="headerlink" title="2）rabbitmq弄丢了数据"></a>2）rabbitmq弄丢了数据</h1><p>就是rabbitmq自己弄丢了数据，这个你必须开启rabbitmq的持久化，就是消息写入之后会持久化到磁盘，哪怕是rabbitmq自己挂了，恢复之后会自动读取之前存储的数据，一般数据不会丢。除非极其罕见的是，rabbitmq还没持久化，自己就挂了，可能导致少量数据会丢失的，但是这个概率较小。</p>
 <p>设置持久化有两个步骤，</p>
 <p>第一个是创建queue的时候将其设置为持久化的，这样就可以保证rabbitmq持久化queue的元数据，但是不会持久化queue里的数据；</p>
 <p>第二个是发送消息的时候将消息的deliveryMode设置为2，就是将消息设置为持久化的，此时rabbitmq就会将消息持久化到磁盘上去。</p>
 <p>必须要同时设置这两个持久化才行，rabbitmq哪怕是挂了，再次重启，也会从磁盘上重启恢复queue，恢复这个queue里的数据。</p>
 <p>而且持久化可以跟生产者那边的confirm机制配合起来，只有消息被持久化到磁盘之后，才会通知生产者ack了，所以哪怕是在持久化到磁盘之前，rabbitmq挂了，数据丢了，生产者收不到ack，你也是可以自己重发的。</p>
 <p>哪怕是你给rabbitmq开启了持久化机制，也有一种可能，就是这个消息写到了rabbitmq中，但是还没来得及持久化到磁盘上，结果不巧，此时rabbitmq挂了，就会导致内存里的一点点数据会丢失。</p>
-<p>3）消费端弄丢了数据</p>
-<p>rabbitmq如果丢失了数据，主要是因为你消费的时候，刚消费到，还没处理，结果进程挂了，比如重启了，那么就尴尬了，rabbitmq认为你都消费了，这数据就丢了。</p>
+<h1 id="3）消费端弄丢了数据"><a href="#3）消费端弄丢了数据" class="headerlink" title="3）消费端弄丢了数据"></a>3）消费端弄丢了数据</h1><p>rabbitmq如果丢失了数据，主要是因为你消费的时候，刚消费到，还没处理，结果进程挂了，比如重启了，那么就尴尬了，rabbitmq认为你都消费了，这数据就丢了。</p>
 <p>这个时候得用rabbitmq提供的ack机制，简单来说，就是你关闭rabbitmq自动ack，可以通过一个api来调用就行，然后每次你自己代码里确保处理完的时候，再程序里ack一把。这样的话，如果你还没处理完，不就没有ack？那rabbitmq就认为你还没处理完，这个时候rabbitmq会把这个消费分配给别的consumer去处理，消息是不会丢的。</p>
+<h1 id="4）小结"><a href="#4）小结" class="headerlink" title="4）小结"></a>4）小结</h1><p>消息队列是如何确保消息的可靠<br>性，不会丢失的。这个过程可以分为分三个阶段，每个阶段都需要正确的编写代码并且设置<br>正确的配置项，才能配合消息队列的可靠性机制，确保消息不会丢失。</p>
+<pre><code>在生产阶段，需要捕获消息发送的错误，并重发消息。
+在存储阶段，可以通过配置刷盘和复制相关的参数，让消息写入到多个副本的磁盘上，
+来确保消息不会因为某个 Broker 宕机或者磁盘损坏而丢失。
+在消费阶段，你需要在处理完全部消费业务逻辑之后，再发送消费确认
+</code></pre><p>在理解了这几个阶段的原理后，如果再出现丢消息的情况，可以通过在代码中加一些<br>日志的方式，很快定位到是哪个阶段出了问题，然后再进一步深入分析，快速找到问题原<br>因。</p>
 
         
             <div class="donate-container">
