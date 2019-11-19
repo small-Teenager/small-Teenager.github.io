@@ -156,11 +156,8 @@
 <h1 id="3）消费端弄丢了数据"><a href="#3）消费端弄丢了数据" class="headerlink" title="3）消费端弄丢了数据"></a>3）消费端弄丢了数据</h1><p>rabbitmq如果丢失了数据，主要是因为你消费的时候，刚消费到，还没处理，结果进程挂了，比如重启了，那么就尴尬了，rabbitmq认为你都消费了，这数据就丢了。</p>
 <p>这个时候得用rabbitmq提供的ack机制，简单来说，就是你关闭rabbitmq自动ack，可以通过一个api来调用就行，然后每次你自己代码里确保处理完的时候，再程序里ack一把。这样的话，如果你还没处理完，不就没有ack？那rabbitmq就认为你还没处理完，这个时候rabbitmq会把这个消费分配给别的consumer去处理，消息是不会丢的。</p>
 <h1 id="4）小结"><a href="#4）小结" class="headerlink" title="4）小结"></a>4）小结</h1><p>消息队列是如何确保消息的可靠<br>性，不会丢失的。这个过程可以分为分三个阶段，每个阶段都需要正确的编写代码并且设置<br>正确的配置项，才能配合消息队列的可靠性机制，确保消息不会丢失。</p>
-<pre><code>在生产阶段，需要捕获消息发送的错误，并重发消息。
-在存储阶段，可以通过配置刷盘和复制相关的参数，让消息写入到多个副本的磁盘上，
-来确保消息不会因为某个 Broker 宕机或者磁盘损坏而丢失。
-在消费阶段，你需要在处理完全部消费业务逻辑之后，再发送消费确认
-</code></pre><p>在理解了这几个阶段的原理后，如果再出现丢消息的情况，可以通过在代码中加一些<br>日志的方式，很快定位到是哪个阶段出了问题，然后再进一步深入分析，快速找到问题原<br>因。</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">在生产阶段，需要捕获消息发送的错误，并重发消息。</span><br><span class="line">在存储阶段，可以通过配置刷盘和复制相关的参数，让消息写入到多个副本的磁盘上，</span><br><span class="line">来确保消息不会因为某个 <span class="keyword">Broker </span>宕机或者磁盘损坏而丢失。</span><br><span class="line">在消费阶段，你需要在处理完全部消费业务逻辑之后，再发送消费确认。</span><br></pre></td></tr></table></figure>
+<p>在理解了这几个阶段的原理后，如果再出现丢消息的情况，可以通过在代码中加一些<br>日志的方式，很快定位到是哪个阶段出了问题，然后再进一步深入分析，快速找到问题原<br>因。</p>
 
         
             <div class="donate-container">
