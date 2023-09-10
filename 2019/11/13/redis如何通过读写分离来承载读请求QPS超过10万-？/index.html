@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Search的博客">
-    <meta name="keyword" content="">
+    <meta name="keyword"  content="">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
     <title>
@@ -16,13 +16,17 @@
     </title>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/aircloud.css">
-    <link rel="stylesheet" href="/css/gitment.css">
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
     <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
     <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
     <!-- ga & ba script hoook -->
     <script></script>
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
 
@@ -45,7 +49,7 @@
 <div class="nav" id="nav">
     <div class="avatar-name">
         <div class="avatar">
-            <img src="/img/avatar.png">
+            <img src="/img/avatar.png" />
         </div>
         <div class="name">
             <i>Search</i>
@@ -53,25 +57,25 @@
     </div>
     <div class="contents" id="nav-content">
         <ul>
-            <li>
+            <li >
                 <a href="/">
                     <i class="iconfont icon-shouye1"></i>
                     <span>主页</span>
                 </a>
             </li>
-            <li>
+            <li >
                 <a href="/tags">
                     <i class="iconfont icon-biaoqian1"></i>
                     <span>标签</span>
                 </a>
             </li>
-            <li>
+            <li >
                 <a href="/archive">
                     <i class="iconfont icon-guidang2"></i>
                     <span>存档</span>
                 </a>
             </li>
-            <li>
+            <li >
                 <a href="/about/">
                     <i class="iconfont icon-guanyu2"></i>
                     <span>关于</span>
@@ -89,7 +93,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1、redis高并发跟整个系统的高并发之间的关系"><span class="toc-text">1、redis高并发跟整个系统的高并发之间的关系</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2、redis不能支撑高并发的瓶颈在哪里？"><span class="toc-text">2、redis不能支撑高并发的瓶颈在哪里？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3、如果redis要支撑超过10万-的并发，那应该怎么做？"><span class="toc-text">3、如果redis要支撑超过10万+的并发，那应该怎么做？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4、redis-replication的核心机制"><span class="toc-text">4、redis replication的核心机制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5、master持久化对于主从架构的安全保障的意义"><span class="toc-text">5、master持久化对于主从架构的安全保障的意义</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1%E3%80%81redis%E9%AB%98%E5%B9%B6%E5%8F%91%E8%B7%9F%E6%95%B4%E4%B8%AA%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%AB%98%E5%B9%B6%E5%8F%91%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-text">1、redis高并发跟整个系统的高并发之间的关系</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%E3%80%81redis%E4%B8%8D%E8%83%BD%E6%94%AF%E6%92%91%E9%AB%98%E5%B9%B6%E5%8F%91%E7%9A%84%E7%93%B6%E9%A2%88%E5%9C%A8%E5%93%AA%E9%87%8C%EF%BC%9F"><span class="toc-text">2、redis不能支撑高并发的瓶颈在哪里？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3%E3%80%81%E5%A6%82%E6%9E%9Credis%E8%A6%81%E6%94%AF%E6%92%91%E8%B6%85%E8%BF%8710%E4%B8%87-%E7%9A%84%E5%B9%B6%E5%8F%91%EF%BC%8C%E9%82%A3%E5%BA%94%E8%AF%A5%E6%80%8E%E4%B9%88%E5%81%9A%EF%BC%9F"><span class="toc-text">3、如果redis要支撑超过10万+的并发，那应该怎么做？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4%E3%80%81redis-replication%E7%9A%84%E6%A0%B8%E5%BF%83%E6%9C%BA%E5%88%B6"><span class="toc-text">4、redis replication的核心机制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5%E3%80%81master%E6%8C%81%E4%B9%85%E5%8C%96%E5%AF%B9%E4%BA%8E%E4%B8%BB%E4%BB%8E%E6%9E%B6%E6%9E%84%E7%9A%84%E5%AE%89%E5%85%A8%E4%BF%9D%E9%9A%9C%E7%9A%84%E6%84%8F%E4%B9%89"><span class="toc-text">5、master持久化对于主从架构的安全保障的意义</span></a></li></ol>
 </div>
     
 </div>
@@ -99,7 +103,7 @@
     <div class="search-container">
         <div class="search-input">
             <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
-            <input id="search-input">
+            <input id="search-input"/>
             <span id="begin-search">搜索</span>
         </div>
         <div class="search-result-container" id="search-result-container">
@@ -134,7 +138,7 @@
         </span>
         <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
 </span>
-
+</span>
     </div>
     <div class="post-content ">
         <h1 id="1、redis高并发跟整个系统的高并发之间的关系"><a href="#1、redis高并发跟整个系统的高并发之间的关系" class="headerlink" title="1、redis高并发跟整个系统的高并发之间的关系"></a>1、redis高并发跟整个系统的高并发之间的关系</h1><ul>
@@ -145,14 +149,14 @@
 <p>光是redis是不够的，但是redis是整个大型的缓存架构中，支撑高并发的架构里面，非常重要的一个环节</p>
 <p>首先，你的底层的缓存中间件，缓存系统，必须能够支撑的起我们说的那种高并发，其次，再经过良好的整体的缓存架构的设计（多级缓存架构、热点缓存），支撑真正的上十万，甚至上百万的高并发</p>
 <h1 id="2、redis不能支撑高并发的瓶颈在哪里？"><a href="#2、redis不能支撑高并发的瓶颈在哪里？" class="headerlink" title="2、redis不能支撑高并发的瓶颈在哪里？"></a>2、redis不能支撑高并发的瓶颈在哪里？</h1><p>单机</p>
-<p><img src="/img/imgs/redis单机的瓶颈.png" alt=""> </p>
+<p><img src="/img/imgs/redis%E5%8D%95%E6%9C%BA%E7%9A%84%E7%93%B6%E9%A2%88.png"> </p>
 <h1 id="3、如果redis要支撑超过10万-的并发，那应该怎么做？"><a href="#3、如果redis要支撑超过10万-的并发，那应该怎么做？" class="headerlink" title="3、如果redis要支撑超过10万+的并发，那应该怎么做？"></a>3、如果redis要支撑超过10万+的并发，那应该怎么做？</h1><p>单机的redis几乎不太可能说QPS超过10万+，除非一些特殊情况，比如你的机器性能特别好，配置特别高，物理机，维护做的特别好，而且你的整体的操作不是太复杂</p>
 <p>单机在几万</p>
 <p>读写分离，一般来说，对缓存，一般都是用来支撑读高并发的，写的请求是比较少的，可能写请求也就一秒钟几千，一两千</p>
 <p>大量的请求都是读，一秒钟二十万次读</p>
 <p>读写分离</p>
 <p>主从架构 -&gt; 读写分离 -&gt; 支撑10万+读QPS的架构</p>
-<p><img src="/img/imgs/redis主从实现读写分离支撑10万+的高并发.png" alt=""> </p>
+<p><img src="/img/imgs/redis%E4%B8%BB%E4%BB%8E%E5%AE%9E%E7%8E%B0%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB%E6%94%AF%E6%92%9110%E4%B8%87+%E7%9A%84%E9%AB%98%E5%B9%B6%E5%8F%91.png"> </p>
 <p>redis replication</p>
 <p>redis主从架构 -&gt; 读写分离架构 -&gt; 可支持水平扩展的读高并发架构</p>
 <h1 id="4、redis-replication的核心机制"><a href="#4、redis-replication的核心机制" class="headerlink" title="4、redis replication的核心机制"></a>4、redis replication的核心机制</h1><p>（1）redis采用异步方式复制数据到slave节点，不过redis 2.8开始，slave node会周期性地确认自己每次复制的数据量</p>
@@ -161,7 +165,7 @@
 <p>（4）slave node做复制的时候，是不会block master node的正常工作的</p>
 <p>（5）slave node在做复制的时候，也不会block对自己的查询操作，它会用旧的数据集来提供服务; 但是复制完成的时候，需要删除旧数据集，加载新数据集，这个时候就会暂停对外服务了</p>
 <p>（6）slave node主要用来进行横向扩容，做读写分离，扩容的slave node可以提高读的吞吐量</p>
-<p><img src="/img/imgs/redis replica最最基本的原理.png" alt=""></p>
+<p>![](&#x2F;img&#x2F;imgs&#x2F;redis replica最最基本的原理.png)</p>
 <p>slave，高可用性，有很大的关系</p>
 <h1 id="5、master持久化对于主从架构的安全保障的意义"><a href="#5、master持久化对于主从架构的安全保障的意义" class="headerlink" title="5、master持久化对于主从架构的安全保障的意义"></a>5、master持久化对于主从架构的安全保障的意义</h1><ul>
 <li>如果采用了主从架构，那么建议必须开启master node的持久化！</li>
@@ -185,7 +189,7 @@
     </div>
 </div>
         
-        <br>
+        <br />
         <div id="comment-container">
         </div>
         <div id="disqus_thread"></div>
@@ -218,7 +222,7 @@
 
         
         <li>
-            <a target="_blank" href="https://github.com/small-teenager">
+            <a target="_blank"  href="https://github.com/small-teenager">
                             <span class="fa-stack fa-lg">
                                 <i class="iconfont icon-github"></i>
                             </span>
@@ -227,24 +231,16 @@
         
 
         
-        <li>
-            <a target="_blank" href="https://www.linkedin.com/in/yaodong-zhang-51592714a">
-                            <span class="fa-stack fa-lg">
-                                <i class="iconfont icon-linkedin"></i>
-                            </span>
-            </a>
-        </li>
-        
 
     </ul>
     
     <p>
         <span>/</span>
         
-        <span><a href="http://melye.github.io/">Melye</a></span>
+        <span><a target="_blank" rel="noopener" href="http://melye.github.io/">Melye</a></span>
         <span>/</span>
         
-        <span><a href="https://niexiaotao.com">Xiaotao&#39;s Page</a></span>
+        <span><a target="_blank" rel="noopener" href="https://niexiaotao.com">Xiaotao&#39;s Page</a></span>
         <span>/</span>
         
         <span><a href="#">It helps SEO</a></span>
@@ -259,7 +255,7 @@
         <span id="busuanzi_container_site_uv">
             <span id="busuanzi_value_site_uv"></span>UV
         </span>
-        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
 </footer>
 
 
@@ -274,10 +270,14 @@
     window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
 <script src="/js/index.js"></script>
+
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
+
 <script src="/js/gitment.js"></script>
+
 <script>
     var gitment = new Gitment({
         id: 'redis如何通过读写分离来承载读请求QPS超过10万+？',

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Search的博客">
-    <meta name="keyword" content="">
+    <meta name="keyword"  content="">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
     <title>
@@ -16,13 +16,17 @@
     </title>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/aircloud.css">
-    <link rel="stylesheet" href="/css/gitment.css">
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
     <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
     <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
     <!-- ga & ba script hoook -->
     <script></script>
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
 
@@ -45,7 +49,7 @@
 <div class="nav" id="nav">
     <div class="avatar-name">
         <div class="avatar">
-            <img src="/img/avatar.png">
+            <img src="/img/avatar.png" />
         </div>
         <div class="name">
             <i>Search</i>
@@ -53,25 +57,25 @@
     </div>
     <div class="contents" id="nav-content">
         <ul>
-            <li>
+            <li >
                 <a href="/">
                     <i class="iconfont icon-shouye1"></i>
                     <span>主页</span>
                 </a>
             </li>
-            <li>
+            <li >
                 <a href="/tags">
                     <i class="iconfont icon-biaoqian1"></i>
                     <span>标签</span>
                 </a>
             </li>
-            <li>
+            <li >
                 <a href="/archive">
                     <i class="iconfont icon-guidang2"></i>
                     <span>存档</span>
                 </a>
             </li>
-            <li>
+            <li >
                 <a href="/about/">
                     <i class="iconfont icon-guanyu2"></i>
                     <span>关于</span>
@@ -89,7 +93,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-BIO通信模型图"><span class="toc-text">1.BIO通信模型图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-伪异步IO编程"><span class="toc-text">2.伪异步IO编程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-NIO编程"><span class="toc-text">3.NIO编程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-NIO服务端序列图"><span class="toc-text">4.NIO服务端序列图</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E4%BC%A0%E7%BB%9F%E5%90%8C%E6%AD%A5%E9%98%BB%E5%A1%9E%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91%E4%B8%AD%EF%BC%8CserverSocket-%E8%B4%9F%E8%B4%A3%E7%BB%91%E5%AE%9Aip-%E5%9C%B0%E5%9D%80%EF%BC%8C%E5%90%AF%E5%8A%A8%E7%9B%91%E5%90%AC%E7%AB%AF%E5%8F%A3%EF%BC%8Csocket-%E8%B4%9F%E8%B4%A3%E5%8F%91%E8%B5%B7%E8%BF%9E%E6%8E%A5%E6%93%8D%E4%BD%9C%E3%80%82%E8%BF%9E%E6%8E%A5%E6%88%90%E5%8A%9F%E4%B9%8B%E5%90%8E%EF%BC%8C%E5%8F%8C%E6%96%B9%E9%80%9A%E8%BF%87%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%B5%81%E8%BF%9B%E8%A1%8C%E5%90%8C%E6%AD%A5%E9%98%BB%E5%A1%9E%E5%BC%8F%E9%80%9A%E4%BF%A1%E3%80%821-BIO%E9%80%9A%E4%BF%A1%E6%A8%A1%E5%9E%8B%E5%9B%BE"><span class="toc-text">基于传统同步阻塞模型开发中，serverSocket 负责绑定ip 地址，启动监听端口，socket 负责发起连接操作。连接成功之后，双方通过输入输出流进行同步阻塞式通信。1.BIO通信模型图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BC%AA%E5%BC%82%E6%AD%A5IO%E7%BC%96%E7%A8%8B"><span class="toc-text">2.伪异步IO编程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-NIO%E7%BC%96%E7%A8%8B"><span class="toc-text">3.NIO编程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NIO%E7%B1%BB%E5%BA%93%E7%AE%80%E4%BB%8B1%E7%BC%93%E5%86%B2%E5%8C%BAbuffer2%E9%80%9A%E9%81%93channel3%E5%A4%9A%E5%A4%8D%E7%94%A8selector4-NIO%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%BA%8F%E5%88%97%E5%9B%BE"><span class="toc-text">NIO类库简介1缓冲区buffer2通道channel3多复用selector4.NIO服务端序列图</span></a></li></ol>
 </div>
     
 </div>
@@ -99,7 +103,7 @@
     <div class="search-container">
         <div class="search-input">
             <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
-            <input id="search-input">
+            <input id="search-input"/>
             <span id="begin-search">搜索</span>
         </div>
         <div class="search-result-container" id="search-result-container">
@@ -134,15 +138,14 @@
         </span>
         <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
 </span>
-
+</span>
     </div>
     <div class="post-content ">
         <blockquote>
 <p>摘要：主要介绍NIO 编程</p>
 </blockquote>
-<p>网络编程的基本模型是client/server 模型（两个进程之间的相互通信） 服务端提供位置信息/绑定ip地址和监听端口）客户端通过连接操作向服务器监听的地址发送连接请求，通过三次握手建立通信，如连接成功 则通过网络套接字/socket/通信。</p>
-<p>基于传统同步阻塞模型开发中，serverSocket 负责绑定ip 地址，启动监听端口，socket 负责发起连接操作。连接成功之后，双方通过输入输出流进行同步阻塞式通信。</p>
-<h2 id="1-BIO通信模型图"><a href="#1-BIO通信模型图" class="headerlink" title="1.BIO通信模型图"></a>1.BIO通信模型图</h2><p><img src="/img/imgs/同步阻塞io服务端通信模型.jpg" alt="">  </p>
+<p>网络编程的基本模型是client&#x2F;server 模型（两个进程之间的相互通信） 服务端提供位置信息&#x2F;绑定ip地址和监听端口）客户端通过连接操作向服务器监听的地址发送连接请求，通过三次握手建立通信，如连接成功 则通过网络套接字&#x2F;socket&#x2F;通信。</p>
+<h2 id="基于传统同步阻塞模型开发中，serverSocket-负责绑定ip-地址，启动监听端口，socket-负责发起连接操作。连接成功之后，双方通过输入输出流进行同步阻塞式通信。1-BIO通信模型图"><a href="#基于传统同步阻塞模型开发中，serverSocket-负责绑定ip-地址，启动监听端口，socket-负责发起连接操作。连接成功之后，双方通过输入输出流进行同步阻塞式通信。1-BIO通信模型图" class="headerlink" title="基于传统同步阻塞模型开发中，serverSocket 负责绑定ip 地址，启动监听端口，socket 负责发起连接操作。连接成功之后，双方通过输入输出流进行同步阻塞式通信。1.BIO通信模型图"></a>基于传统同步阻塞模型开发中，serverSocket 负责绑定ip 地址，启动监听端口，socket 负责发起连接操作。连接成功之后，双方通过输入输出流进行同步阻塞式通信。<br><br>1.BIO通信模型图</h2><p><img src="/img/imgs/%E5%90%8C%E6%AD%A5%E9%98%BB%E5%A1%9Eio%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%80%9A%E4%BF%A1%E6%A8%A1%E5%9E%8B.jpg">  </p>
 <p>采用BIO 通信模型的服务端，通常由一个独立的Acceptor 线程负责监听客户端的连接，它接收到客户端连接请求之后为每个客户端创建一个新的线程进行链路处理，处理完成后，通过输出流返回应答给客户段，线程销毁。</p>
 <p>该模型缺乏弹性伸缩能力，当客户端并发并访问量增加，服务端的线程个数和客户端访问呈1：1 相关，由于线程是Java虚拟机的宝贵资源，当线程数膨胀后，系统的性能将急剧下降，随着并发访问增大，系统会发生堆栈溢出 创建新线程失败，最终导致进程宕机或者僵死，不能对外提供服务</p>
 <blockquote>
@@ -152,15 +155,11 @@
 <p>2、为了改进一线程一连接模型，通过线程池或者消息队列实现，一个或者多个线程处理n个客户端的模型，由于它的底层通信机制依然使用同步阻塞IO，所以被称为伪异步，</p>
 </blockquote>
 <h2 id="2-伪异步IO编程"><a href="#2-伪异步IO编程" class="headerlink" title="2.伪异步IO编程"></a>2.伪异步IO编程</h2><p>后端通过一个线程池来处理多个客户端的请求接入，客户端个数M 线程池最大线程数N，通过线程池灵活调配线程资源，设置线程的最大值，防止并发接入导致线程耗尽，</p>
-<p>伪异步IO模型图<br><img src="/img/imgs/asyn-io.png" alt=""><br>当有新的客户端接入的时候，将客户端的Socket封装成一个Task（该任务实现java.lang.Runnable接口）投递到后端的线程池中进行处理,JDK的线程池维护一个消息队列和N个活跃线程对消息队列中的任务进行处理。由于线程池可以设置消息队列的大小和最大线程数，因此，它的资源占用是可控的，无论多少个客户端并发访问，都不会导致资源的耗尽和宕机。 </p>
+<p>伪异步IO模型图<br><img src="/img/imgs/asyn-io.png"><br>当有新的客户端接入的时候，将客户端的Socket封装成一个Task（该任务实现java.lang.Runnable接口）投递到后端的线程池中进行处理,JDK的线程池维护一个消息队列和N个活跃线程对消息队列中的任务进行处理。由于线程池可以设置消息队列的大小和最大线程数，因此，它的资源占用是可控的，无论多少个客户端并发访问，都不会导致资源的耗尽和宕机。 </p>
 <p>伪异步IO通信框架采用了线程池实现，因此避免了为每个请求都创建一个独立线程造成的线程资源耗尽问题。但是由于它底层的通信依然采用同步阻塞模型，因此无法从根本上解决问题。<br>伪异步IO弊端分析</p>
 <h2 id="3-NIO编程"><a href="#3-NIO编程" class="headerlink" title="3.NIO编程"></a>3.NIO编程</h2><p>NIO提供SocketChannel和 ServerSocketChannel不同的套接字通道实现;<br>通常 低负载 低并发的应用选择同步阻塞IO降低复杂度  高并发 高负载选择NIO 的非阻塞式模式</p>
-<p>NIO类库简介</p>
-<p>1缓冲区buffer</p>
-<p>2通道channel</p>
-<p>3多复用selector</p>
-<h2 id="4-NIO服务端序列图"><a href="#4-NIO服务端序列图" class="headerlink" title="4.NIO服务端序列图"></a>4.NIO服务端序列图</h2><p><img src="/img/imgs/NIO服务端序列图.png" alt="">  </p>
-<p>NIO客户端序列图<br><img src="/img/imgs/NIO客户端序列图.png" alt=""> </p>
+<h2 id="NIO类库简介1缓冲区buffer2通道channel3多复用selector4-NIO服务端序列图"><a href="#NIO类库简介1缓冲区buffer2通道channel3多复用selector4-NIO服务端序列图" class="headerlink" title="NIO类库简介1缓冲区buffer2通道channel3多复用selector4.NIO服务端序列图"></a>NIO类库简介<br><br>1缓冲区buffer<br><br>2通道channel<br><br>3多复用selector<br><br>4.NIO服务端序列图</h2><p><img src="/img/imgs/NIO%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%BA%8F%E5%88%97%E5%9B%BE.png">  </p>
+<p>NIO客户端序列图<br><img src="/img/imgs/NIO%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%BA%8F%E5%88%97%E5%9B%BE.png"> </p>
 <p>NIO的优点</p>
 <ol>
 <li><p>不需要使用read()或者write()操作就可以处理文件内容了</p>
@@ -185,7 +184,7 @@
     </div>
 </div>
         
-        <br>
+        <br />
         <div id="comment-container">
         </div>
         <div id="disqus_thread"></div>
@@ -218,7 +217,7 @@
 
         
         <li>
-            <a target="_blank" href="https://github.com/small-teenager">
+            <a target="_blank"  href="https://github.com/small-teenager">
                             <span class="fa-stack fa-lg">
                                 <i class="iconfont icon-github"></i>
                             </span>
@@ -227,24 +226,16 @@
         
 
         
-        <li>
-            <a target="_blank" href="https://www.linkedin.com/in/yaodong-zhang-51592714a">
-                            <span class="fa-stack fa-lg">
-                                <i class="iconfont icon-linkedin"></i>
-                            </span>
-            </a>
-        </li>
-        
 
     </ul>
     
     <p>
         <span>/</span>
         
-        <span><a href="http://melye.github.io/">Melye</a></span>
+        <span><a target="_blank" rel="noopener" href="http://melye.github.io/">Melye</a></span>
         <span>/</span>
         
-        <span><a href="https://niexiaotao.com">Xiaotao&#39;s Page</a></span>
+        <span><a target="_blank" rel="noopener" href="https://niexiaotao.com">Xiaotao&#39;s Page</a></span>
         <span>/</span>
         
         <span><a href="#">It helps SEO</a></span>
@@ -259,7 +250,7 @@
         <span id="busuanzi_container_site_uv">
             <span id="busuanzi_value_site_uv"></span>UV
         </span>
-        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
 </footer>
 
 
@@ -274,10 +265,14 @@
     window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
 <script src="/js/index.js"></script>
+
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
+
 <script src="/js/gitment.js"></script>
+
 <script>
     var gitment = new Gitment({
         id: '【Netty】NIO 编程',

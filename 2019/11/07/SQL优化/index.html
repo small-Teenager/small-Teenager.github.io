@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Search的博客">
-    <meta name="keyword" content="">
+    <meta name="keyword"  content="">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
     <title>
@@ -16,13 +16,17 @@
     </title>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/aircloud.css">
-    <link rel="stylesheet" href="/css/gitment.css">
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
     <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
     <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
     <!-- ga & ba script hoook -->
     <script></script>
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
 
@@ -45,7 +49,7 @@
 <div class="nav" id="nav">
     <div class="avatar-name">
         <div class="avatar">
-            <img src="/img/avatar.png">
+            <img src="/img/avatar.png" />
         </div>
         <div class="name">
             <i>Search</i>
@@ -53,25 +57,25 @@
     </div>
     <div class="contents" id="nav-content">
         <ul>
-            <li>
+            <li >
                 <a href="/">
                     <i class="iconfont icon-shouye1"></i>
                     <span>主页</span>
                 </a>
             </li>
-            <li>
+            <li >
                 <a href="/tags">
                     <i class="iconfont icon-biaoqian1"></i>
                     <span>标签</span>
                 </a>
             </li>
-            <li>
+            <li >
                 <a href="/archive">
                     <i class="iconfont icon-guidang2"></i>
                     <span>存档</span>
                 </a>
             </li>
-            <li>
+            <li >
                 <a href="/about/">
                     <i class="iconfont icon-guanyu2"></i>
                     <span>关于</span>
@@ -89,7 +93,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、为什么要对SQL进行优化"><span class="toc-text">一、为什么要对SQL进行优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、SQL优化的一些方法"><span class="toc-text">二、SQL优化的一些方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建索引"><span class="toc-text">创建索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#避免在索引上使用计算"><span class="toc-text">避免在索引上使用计算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用预编译查询"><span class="toc-text">使用预编译查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#调整Where字句中的连接顺序"><span class="toc-text">调整Where字句中的连接顺序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用where字句替换HAVING字句"><span class="toc-text">用where字句替换HAVING字句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用表的别名"><span class="toc-text">使用表的别名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用union-all替换union"><span class="toc-text">用union all替换union</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#尽量避免使用游标"><span class="toc-text">尽量避免使用游标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用varchar-nvarchar-代替-char-nchar"><span class="toc-text">用varchar/nvarchar 代替 char/nchar</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查询select语句优化"><span class="toc-text">查询select语句优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更新Update语句优化"><span class="toc-text">更新Update语句优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除Delete语句优化语句"><span class="toc-text">删除Delete语句优化语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#插入Insert语句优化"><span class="toc-text">插入Insert语句优化</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AF%B9SQL%E8%BF%9B%E8%A1%8C%E4%BC%98%E5%8C%96"><span class="toc-text">一、为什么要对SQL进行优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81SQL%E4%BC%98%E5%8C%96%E7%9A%84%E4%B8%80%E4%BA%9B%E6%96%B9%E6%B3%95"><span class="toc-text">二、SQL优化的一些方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%B4%A2%E5%BC%95"><span class="toc-text">创建索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%81%BF%E5%85%8D%E5%9C%A8%E7%B4%A2%E5%BC%95%E4%B8%8A%E4%BD%BF%E7%94%A8%E8%AE%A1%E7%AE%97"><span class="toc-text">避免在索引上使用计算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E9%A2%84%E7%BC%96%E8%AF%91%E6%9F%A5%E8%AF%A2"><span class="toc-text">使用预编译查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B0%83%E6%95%B4Where%E5%AD%97%E5%8F%A5%E4%B8%AD%E7%9A%84%E8%BF%9E%E6%8E%A5%E9%A1%BA%E5%BA%8F"><span class="toc-text">调整Where字句中的连接顺序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8where%E5%AD%97%E5%8F%A5%E6%9B%BF%E6%8D%A2HAVING%E5%AD%97%E5%8F%A5"><span class="toc-text">用where字句替换HAVING字句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E8%A1%A8%E7%9A%84%E5%88%AB%E5%90%8D"><span class="toc-text">使用表的别名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8union-all%E6%9B%BF%E6%8D%A2union"><span class="toc-text">用union all替换union</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%BD%E9%87%8F%E9%81%BF%E5%85%8D%E4%BD%BF%E7%94%A8%E6%B8%B8%E6%A0%87"><span class="toc-text">尽量避免使用游标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8varchar-nvarchar-%E4%BB%A3%E6%9B%BF-char-nchar"><span class="toc-text">用varchar&#x2F;nvarchar 代替 char&#x2F;nchar</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2select%E8%AF%AD%E5%8F%A5%E4%BC%98%E5%8C%96"><span class="toc-text">查询select语句优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0Update%E8%AF%AD%E5%8F%A5%E4%BC%98%E5%8C%96"><span class="toc-text">更新Update语句优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4Delete%E8%AF%AD%E5%8F%A5%E4%BC%98%E5%8C%96%E8%AF%AD%E5%8F%A5"><span class="toc-text">删除Delete语句优化语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E5%85%A5Insert%E8%AF%AD%E5%8F%A5%E4%BC%98%E5%8C%96"><span class="toc-text">插入Insert语句优化</span></a></li></ol></li></ol>
 </div>
     
 </div>
@@ -99,7 +103,7 @@
     <div class="search-container">
         <div class="search-input">
             <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
-            <input id="search-input">
+            <input id="search-input"/>
             <span id="begin-search">搜索</span>
         </div>
         <div class="search-result-container" id="search-result-container">
@@ -134,7 +138,7 @@
         </span>
         <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
 </span>
-
+</span>
     </div>
     <div class="post-content ">
         <h2 id="一、为什么要对SQL进行优化"><a href="#一、为什么要对SQL进行优化" class="headerlink" title="一、为什么要对SQL进行优化"></a>一、为什么要对SQL进行优化</h2><ul>
@@ -149,7 +153,8 @@
 <h3 id="避免在索引上使用计算"><a href="#避免在索引上使用计算" class="headerlink" title="避免在索引上使用计算"></a>避免在索引上使用计算</h3><ul>
 <li>在where字句中，如果索引列是计算或者函数的一部分，DBMS的优化器将不会使用索引而使用全表查询,函数<br>属于计算的一种,同时在in和exists中通常情况下使用EXISTS，因为in不走索引</li>
 </ul>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">效率低：</span><br><span class="line"></span><br><span class="line"> select * <span class="keyword">from</span><span class="built_in"> user </span>where salary<span class="number">*22</span>&gt;11000(salary是索引列)</span><br><span class="line"></span><br><span class="line">效率高：</span><br><span class="line"></span><br><span class="line"> select * <span class="keyword">from</span><span class="built_in"> user </span>where salary&gt;11000/22(salary是索引列)</span><br></pre></td></tr></table></figure>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">效率低：</span><br><span class="line"></span><br><span class="line"> <span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> salary*<span class="number">22</span>&gt;<span class="number">11000</span>(salary是索引列)</span><br><span class="line"></span><br><span class="line">效率高：</span><br><span class="line"></span><br><span class="line"> <span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> salary&gt;<span class="number">11000</span>/<span class="number">22</span>(salary是索引列)</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+
 <h3 id="使用预编译查询"><a href="#使用预编译查询" class="headerlink" title="使用预编译查询"></a>使用预编译查询</h3><ul>
 <li>程序中通常是根据用户的输入来动态执行SQL，这时应该尽量使用参数化SQL,这样不仅可以避免SQL注入漏洞<br>攻击，最重要数据库会对这些参数化SQL进行预编译，这样第一次执行的时候DBMS会为这个SQL语句进行查询优化<br>并且执行预编译，这样以后再执行这个SQL的时候就直接使用预编译的结果，这样可以大大提高执行的速度。</li>
 </ul>
@@ -166,17 +171,18 @@
 <h3 id="尽量避免使用游标"><a href="#尽量避免使用游标" class="headerlink" title="尽量避免使用游标"></a>尽量避免使用游标</h3><ul>
 <li>尽量避免向客户端返回大数据量，若数据量过大，应该考虑相应需求是否合理。因为游标的效率较差，如果游标操作的数据超过1万行，那么就应该考虑改写。</li>
 </ul>
-<h3 id="用varchar-nvarchar-代替-char-nchar"><a href="#用varchar-nvarchar-代替-char-nchar" class="headerlink" title="用varchar/nvarchar 代替 char/nchar"></a>用varchar/nvarchar 代替 char/nchar</h3><ul>
-<li>尽可能的使用 varchar/nvarchar 代替 char/nchar ，因为首先变长字段存储空间小，可以节省存储空间，其次对于查询来说，在一个相对较小的字段内搜索效率显然要高些。<br>不要以为 NULL 不需要空间，比如：char(100) 型，在字段建立时，空间就固定了， 不管是否插入值（NULL也包含在内），都是占用 100个字符的空间的，如果是varchar这样的变长字段， null 不占用空间。</li>
+<h3 id="用varchar-nvarchar-代替-char-nchar"><a href="#用varchar-nvarchar-代替-char-nchar" class="headerlink" title="用varchar&#x2F;nvarchar 代替 char&#x2F;nchar"></a>用varchar&#x2F;nvarchar 代替 char&#x2F;nchar</h3><ul>
+<li>尽可能的使用 varchar&#x2F;nvarchar 代替 char&#x2F;nchar ，因为首先变长字段存储空间小，可以节省存储空间，其次对于查询来说，在一个相对较小的字段内搜索效率显然要高些。<br>不要以为 NULL 不需要空间，比如：char(100) 型，在字段建立时，空间就固定了， 不管是否插入值（NULL也包含在内），都是占用 100个字符的空间的，如果是varchar这样的变长字段， null 不占用空间。</li>
 </ul>
-<h3 id="查询select语句优化"><a href="#查询select语句优化" class="headerlink" title="查询select语句优化"></a>查询select语句优化</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1.任何地方都不要使用 <span class="keyword">select</span> * <span class="keyword">from</span> t ，用具体的字段列表代替“*”，不要返回用不到的任何字段</span><br><span class="line"><span class="number">2.</span>应尽量避免在 <span class="keyword">where</span> 子句中对字段进行 <span class="literal">null</span> 值判断，否则将导致引擎放弃使用索引而进行全表扫描，</span><br><span class="line">如：</span><br><span class="line"></span><br><span class="line">		<span class="keyword">select</span> <span class="keyword">id</span> <span class="keyword">from</span> t <span class="keyword">where</span> <span class="keyword">num</span> <span class="keyword">is</span> <span class="literal">null</span>           </span><br><span class="line">	</span><br><span class="line">可以在<span class="keyword">num</span>上设置默认值<span class="number">0</span>，确保表中<span class="keyword">num</span>列没有<span class="literal">null</span>值，</span><br><span class="line">然后这样查询：</span><br><span class="line"></span><br><span class="line">		<span class="keyword">select</span> <span class="keyword">id</span> <span class="keyword">from</span> t <span class="keyword">where</span> <span class="keyword">num</span>=<span class="number">0</span></span><br><span class="line">		<span class="keyword">select</span> <span class="keyword">id</span> <span class="keyword">from</span> t <span class="keyword">where</span> <span class="keyword">num</span>=<span class="number">10</span> <span class="keyword">or</span> <span class="keyword">num</span>=<span class="number">20</span></span><br><span class="line">	</span><br><span class="line">可以这样查询：</span><br><span class="line"></span><br><span class="line">		<span class="keyword">select</span> <span class="keyword">id</span> <span class="keyword">from</span> t <span class="keyword">where</span> <span class="keyword">num</span>=<span class="number">10</span></span><br><span class="line">		<span class="keyword">union</span> all</span><br><span class="line">		<span class="keyword">select</span> <span class="keyword">id</span> <span class="keyword">from</span> t <span class="keyword">where</span> <span class="keyword">num</span>=<span class="number">20</span></span><br><span class="line">	</span><br><span class="line">对于连续的数值，能用 <span class="keyword">between</span> 就不要用 <span class="keyword">in</span> 了：</span><br><span class="line"></span><br><span class="line">		<span class="keyword">select</span> <span class="keyword">id</span> <span class="keyword">from</span> t <span class="keyword">where</span> <span class="keyword">num</span> <span class="keyword">between</span> <span class="number">1</span> <span class="keyword">and</span> <span class="number">3</span> </span><br><span class="line">	</span><br><span class="line">如果查询的两个表大小相当，那么用<span class="keyword">in</span>和<span class="keyword">exists</span>差别不大。</span><br><span class="line"><span class="keyword">in</span>：</span><br><span class="line">例如：表A（小表），表B（大表）</span><br><span class="line"></span><br><span class="line">	 <span class="keyword">select</span> * <span class="keyword">from</span> A <span class="keyword">where</span> cc <span class="keyword">in</span> (<span class="keyword">select</span> cc <span class="keyword">from</span> B) 效率低，用到了A表上cc列的索引；     </span><br><span class="line">	 <span class="keyword">select</span> * <span class="keyword">from</span> A <span class="keyword">where</span> <span class="keyword">exists</span>(<span class="keyword">select</span> cc <span class="keyword">from</span> B <span class="keyword">where</span> cc=A.cc)   效率高，用到了B表上cc列的索引。   </span><br><span class="line">	</span><br><span class="line">相反的</span><br><span class="line"></span><br><span class="line">	 <span class="keyword">select</span> * <span class="keyword">from</span> B <span class="keyword">where</span> cc <span class="keyword">in</span> (<span class="keyword">select</span> cc <span class="keyword">from</span> A)  效率高，用到了B表上cc列的索引；</span><br><span class="line">	 <span class="keyword">select</span> * <span class="keyword">from</span> B <span class="keyword">where</span> <span class="keyword">exists</span>(<span class="keyword">select</span> cc <span class="keyword">from</span> A <span class="keyword">where</span> cc=B.cc)  效率低，用到了A表上cc列的索引。</span><br></pre></td></tr></table></figure>
+<h3 id="查询select语句优化"><a href="#查询select语句优化" class="headerlink" title="查询select语句优化"></a>查询select语句优化</h3><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1.任何地方都不要使用 <span class="keyword">select</span> * <span class="keyword">from</span> t ，用具体的字段列表代替“*”，不要返回用不到的任何字段</span><br><span class="line"><span class="number">2.</span>应尽量避免在 <span class="keyword">where</span> 子句中对字段进行 <span class="literal">null</span> 值判断，否则将导致引擎放弃使用索引而进行全表扫描，</span><br><span class="line">如：</span><br><span class="line"></span><br><span class="line">		<span class="keyword">select</span> id <span class="keyword">from</span> t <span class="keyword">where</span> num <span class="keyword">is</span> <span class="literal">null</span>           </span><br><span class="line">	</span><br><span class="line">可以在num上设置默认值<span class="number">0</span>，确保表中num列没有<span class="literal">null</span>值，</span><br><span class="line">然后这样查询：</span><br><span class="line"></span><br><span class="line">		<span class="keyword">select</span> id <span class="keyword">from</span> t <span class="keyword">where</span> num=<span class="number">0</span></span><br><span class="line">		<span class="keyword">select</span> id <span class="keyword">from</span> t <span class="keyword">where</span> num=<span class="number">10</span> <span class="keyword">or</span> num=<span class="number">20</span></span><br><span class="line">	</span><br><span class="line">可以这样查询：</span><br><span class="line"></span><br><span class="line">		<span class="keyword">select</span> id <span class="keyword">from</span> t <span class="keyword">where</span> num=<span class="number">10</span></span><br><span class="line">		<span class="keyword">union</span> <span class="keyword">all</span></span><br><span class="line">		<span class="keyword">select</span> id <span class="keyword">from</span> t <span class="keyword">where</span> num=<span class="number">20</span></span><br><span class="line">	</span><br><span class="line">对于连续的数值，能用 <span class="keyword">between</span> 就不要用 <span class="keyword">in</span> 了：</span><br><span class="line"></span><br><span class="line">		<span class="keyword">select</span> id <span class="keyword">from</span> t <span class="keyword">where</span> num <span class="keyword">between</span> <span class="number">1</span> <span class="keyword">and</span> <span class="number">3</span> </span><br><span class="line">	</span><br><span class="line">如果查询的两个表大小相当，那么用<span class="keyword">in</span>和<span class="keyword">exists</span>差别不大。</span><br><span class="line"><span class="keyword">in</span>：</span><br><span class="line">例如：表A（小表），表B（大表）</span><br><span class="line"></span><br><span class="line">	 <span class="keyword">select</span> * <span class="keyword">from</span> A <span class="keyword">where</span> cc <span class="keyword">in</span> (<span class="keyword">select</span> cc <span class="keyword">from</span> B) 效率低，用到了A表上cc列的索引；     </span><br><span class="line">	 <span class="keyword">select</span> * <span class="keyword">from</span> A <span class="keyword">where</span> <span class="keyword">exists</span>(<span class="keyword">select</span> cc <span class="keyword">from</span> B <span class="keyword">where</span> cc=A.cc)   效率高，用到了B表上cc列的索引。   </span><br><span class="line">	</span><br><span class="line">相反的</span><br><span class="line"></span><br><span class="line">	 <span class="keyword">select</span> * <span class="keyword">from</span> B <span class="keyword">where</span> cc <span class="keyword">in</span> (<span class="keyword">select</span> cc <span class="keyword">from</span> A)  效率高，用到了B表上cc列的索引；</span><br><span class="line">	 <span class="keyword">select</span> * <span class="keyword">from</span> B <span class="keyword">where</span> <span class="keyword">exists</span>(<span class="keyword">select</span> cc <span class="keyword">from</span> A <span class="keyword">where</span> cc=B.cc)  效率低，用到了A表上cc列的索引。         </span><br></pre></td></tr></table></figure>
 <h3 id="更新Update语句优化"><a href="#更新Update语句优化" class="headerlink" title="更新Update语句优化"></a>更新Update语句优化</h3><ul>
 <li>1.如果只更改1、2个字段，不要Update全部字段，否则频繁调用会引起明显的性能消耗，同时带来大量日志</li>
 </ul>
 <h3 id="删除Delete语句优化语句"><a href="#删除Delete语句优化语句" class="headerlink" title="删除Delete语句优化语句"></a>删除Delete语句优化语句</h3><ul>
 <li>1.最高效的删除重复记录方法 ( 因为使用了ROWID)例子：</li>
 </ul>
-<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> EMP <span class="built_in">E</span> <span class="keyword">WHERE</span> <span class="built_in">E</span>.ROWID &gt; (<span class="keyword">SELECT</span> <span class="built_in">MIN</span>(X.ROWID) <span class="keyword">FROM</span> EMP X <span class="keyword">WHERE</span> X.EMP_NO = <span class="built_in">E</span>.EMP_NO);</span><br></pre></td></tr></table></figure>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> EMP <span class="built_in">E</span> <span class="keyword">WHERE</span> <span class="built_in">E</span>.ROWID &gt; (<span class="keyword">SELECT</span> <span class="built_in">MIN</span>(X.ROWID) <span class="keyword">FROM</span> EMP X <span class="keyword">WHERE</span> X.EMP_NO = <span class="built_in">E</span>.EMP_NO);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <h3 id="插入Insert语句优化"><a href="#插入Insert语句优化" class="headerlink" title="插入Insert语句优化"></a>插入Insert语句优化</h3><ul>
 <li>1.在新建临时表时，如果一次性插入数据量很大，那么可以使用 select into 代替 create table，避免造成大量 log ，以提高速度；如果数据量不大，为了缓和系统表的资源，应先create table，然后insert。</li>
 </ul>
@@ -192,7 +198,7 @@
     </div>
 </div>
         
-        <br>
+        <br />
         <div id="comment-container">
         </div>
         <div id="disqus_thread"></div>
@@ -225,7 +231,7 @@
 
         
         <li>
-            <a target="_blank" href="https://github.com/small-teenager">
+            <a target="_blank"  href="https://github.com/small-teenager">
                             <span class="fa-stack fa-lg">
                                 <i class="iconfont icon-github"></i>
                             </span>
@@ -234,24 +240,16 @@
         
 
         
-        <li>
-            <a target="_blank" href="https://www.linkedin.com/in/yaodong-zhang-51592714a">
-                            <span class="fa-stack fa-lg">
-                                <i class="iconfont icon-linkedin"></i>
-                            </span>
-            </a>
-        </li>
-        
 
     </ul>
     
     <p>
         <span>/</span>
         
-        <span><a href="http://melye.github.io/">Melye</a></span>
+        <span><a target="_blank" rel="noopener" href="http://melye.github.io/">Melye</a></span>
         <span>/</span>
         
-        <span><a href="https://niexiaotao.com">Xiaotao&#39;s Page</a></span>
+        <span><a target="_blank" rel="noopener" href="https://niexiaotao.com">Xiaotao&#39;s Page</a></span>
         <span>/</span>
         
         <span><a href="#">It helps SEO</a></span>
@@ -266,7 +264,7 @@
         <span id="busuanzi_container_site_uv">
             <span id="busuanzi_value_site_uv"></span>UV
         </span>
-        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
 </footer>
 
 
@@ -281,10 +279,14 @@
     window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
 <script src="/js/index.js"></script>
+
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
+
 <script src="/js/gitment.js"></script>
+
 <script>
     var gitment = new Gitment({
         id: 'SQL优化',

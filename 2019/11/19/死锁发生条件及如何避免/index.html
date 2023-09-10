@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Search的博客">
-    <meta name="keyword" content="">
+    <meta name="keyword"  content="">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
     <title>
@@ -16,13 +16,17 @@
     </title>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/aircloud.css">
-    <link rel="stylesheet" href="/css/gitment.css">
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
     <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
     <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
     <!-- ga & ba script hoook -->
     <script></script>
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
 
@@ -45,7 +49,7 @@
 <div class="nav" id="nav">
     <div class="avatar-name">
         <div class="avatar">
-            <img src="/img/avatar.png">
+            <img src="/img/avatar.png" />
         </div>
         <div class="name">
             <i>Search</i>
@@ -53,25 +57,25 @@
     </div>
     <div class="contents" id="nav-content">
         <ul>
-            <li>
+            <li >
                 <a href="/">
                     <i class="iconfont icon-shouye1"></i>
                     <span>主页</span>
                 </a>
             </li>
-            <li>
+            <li >
                 <a href="/tags">
                     <i class="iconfont icon-biaoqian1"></i>
                     <span>标签</span>
                 </a>
             </li>
-            <li>
+            <li >
                 <a href="/archive">
                     <i class="iconfont icon-guidang2"></i>
                     <span>存档</span>
                 </a>
             </li>
-            <li>
+            <li >
                 <a href="/about/">
                     <i class="iconfont icon-guanyu2"></i>
                     <span>关于</span>
@@ -89,7 +93,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#死锁发生条件"><span class="toc-text">死锁发生条件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#如何避免死锁"><span class="toc-text">如何避免死锁</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#关于避免死锁"><span class="toc-text">关于避免死锁</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AD%BB%E9%94%81%E5%8F%91%E7%94%9F%E6%9D%A1%E4%BB%B6"><span class="toc-text">死锁发生条件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E6%AD%BB%E9%94%81"><span class="toc-text">如何避免死锁</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E9%81%BF%E5%85%8D%E6%AD%BB%E9%94%81"><span class="toc-text">关于避免死锁</span></a></li></ol>
 </div>
     
 </div>
@@ -99,7 +103,7 @@
     <div class="search-container">
         <div class="search-input">
             <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
-            <input id="search-input">
+            <input id="search-input"/>
             <span id="begin-search">搜索</span>
         </div>
         <div class="search-result-container" id="search-result-container">
@@ -134,7 +138,7 @@
         </span>
         <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
 </span>
-
+</span>
     </div>
     <div class="post-content ">
         <h1 id="死锁发生条件"><a href="#死锁发生条件" class="headerlink" title="死锁发生条件"></a>死锁发生条件</h1><ol>
@@ -148,8 +152,10 @@
 </li>
 </ol>
 <h1 id="如何避免死锁"><a href="#如何避免死锁" class="headerlink" title="如何避免死锁"></a>如何避免死锁</h1><pre><code>只要破坏4个条件中的一个即可避免死锁。
-</code></pre><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="code">	</span></span><br><span class="line"><span class="bullet">1. </span>对于“占用且等待”这个条件，我们可以一次性申请所有的资源，这样就不存在等待</span><br><span class="line">了。</span><br><span class="line"><span class="bullet">2. </span>对于“不可抢占”这个条件，占用部分资源的线程进一步申请其他资源时，如果申请不</span><br><span class="line">到，可以主动释放它占有的资源，这样不可抢占这个条件就破坏掉了。</span><br><span class="line"><span class="bullet">3. </span>对于“循环等待”这个条件，可以靠按序申请资源来预防。所谓按序申请，是指资源是</span><br><span class="line">有线性顺序的，申请的时候可以先申请资源序号小的，再申请资源序号大的，这样线性</span><br><span class="line">化后自然就不存在循环了。</span><br><span class="line">我们已经从理论上解决了如何预防死锁，那具体如何体现在代码上呢？下面我们就来尝试用</span><br><span class="line">代码实践一下这些理论。</span><br><span class="line"><span class="bullet">1. </span>破坏占用且等待条件</span><br><span class="line">从理论上讲，要破坏这个条件，可以一次性申请所有资源。在现实世界里，</span><br><span class="line">转账操作，它需要的资源有两个，一个是转出账户，另一个是转入账户，当这两个</span><br><span class="line">账户同时被申请时，我们该怎么解决这个问题呢？</span><br><span class="line">可以增加一个账本管理员，然后只允许账本管理员从文件架上拿账本，也就是说柜员不能直</span><br><span class="line">接在文件架上拿账本，必须通过账本管理员才能拿到想要的账本。例如，张三同时申请账本</span><br><span class="line">A 和 B，账本管理员如果发现文件架上只有账本 A，这个时候账本管理员是不会把账本 A</span><br><span class="line">拿下来给张三的，只有账本 A 和 B 都在的时候才会给张三。这样就保证了“一次性申请所</span><br><span class="line">有资源”。</span><br></pre></td></tr></table></figure>
-<h1 id="关于避免死锁"><a href="#关于避免死锁" class="headerlink" title="关于避免死锁"></a>关于避免死锁</h1><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="bullet">1. </span>避免滥用锁，程序里用的锁少，写出死锁 Bug 的几率自然就低。</span><br><span class="line"><span class="bullet">2. </span>对于同一把锁，加锁和解锁必须要放在同一个方法中，这样一次加锁对应一次解锁，代</span><br><span class="line">码清晰简单，便于分析问题。</span><br><span class="line"><span class="bullet">3. </span>尽量避免在持有一把锁的情况下，去获取另外一把锁，就是要尽量避免同时持有多把</span><br><span class="line">锁。</span><br><span class="line"><span class="bullet">4. </span>如果需要持有多把锁，一定要注意加解锁的顺序，解锁的顺序要和加锁顺序相反。比</span><br><span class="line">如，获取三把锁的顺序是 A、B、C，释放锁的顺序必须是 C、B、A。</span><br><span class="line"><span class="bullet">5. </span>给你程序中所有的锁排一个顺序，在所有需要加锁的地方，按照同样的顺序加解锁。比</span><br><span class="line">如我刚刚举的那个例子，如果两个线程都按照先获取 lockA 再获取 lockB 的顺序加</span><br><span class="line">锁，就不会产生死锁。</span><br></pre></td></tr></table></figure>
+</code></pre>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">	</span><br><span class="line"><span class="number">1</span>. 对于“占用且等待”这个条件，我们可以一次性申请所有的资源，这样就不存在等待</span><br><span class="line">了。</span><br><span class="line"><span class="number">2</span>. 对于“不可抢占”这个条件，占用部分资源的线程进一步申请其他资源时，如果申请不</span><br><span class="line">到，可以主动释放它占有的资源，这样不可抢占这个条件就破坏掉了。</span><br><span class="line"><span class="number">3</span>. 对于“循环等待”这个条件，可以靠按序申请资源来预防。所谓按序申请，是指资源是</span><br><span class="line">有线性顺序的，申请的时候可以先申请资源序号小的，再申请资源序号大的，这样线性</span><br><span class="line">化后自然就不存在循环了。</span><br><span class="line">我们已经从理论上解决了如何预防死锁，那具体如何体现在代码上呢？下面我们就来尝试用</span><br><span class="line">代码实践一下这些理论。</span><br><span class="line"><span class="number">1</span>. 破坏占用且等待条件</span><br><span class="line">从理论上讲，要破坏这个条件，可以一次性申请所有资源。在现实世界里，</span><br><span class="line">转账操作，它需要的资源有两个，一个是转出账户，另一个是转入账户，当这两个</span><br><span class="line">账户同时被申请时，我们该怎么解决这个问题呢？</span><br><span class="line">可以增加一个账本管理员，然后只允许账本管理员从文件架上拿账本，也就是说柜员不能直</span><br><span class="line">接在文件架上拿账本，必须通过账本管理员才能拿到想要的账本。例如，张三同时申请账本</span><br><span class="line"><span class="selector-tag">A</span> 和 <span class="selector-tag">B</span>，账本管理员如果发现文件架上只有账本 <span class="selector-tag">A</span>，这个时候账本管理员是不会把账本 <span class="selector-tag">A</span></span><br><span class="line">拿下来给张三的，只有账本 <span class="selector-tag">A</span> 和 <span class="selector-tag">B</span> 都在的时候才会给张三。这样就保证了“一次性申请所</span><br><span class="line">有资源”。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="关于避免死锁"><a href="#关于避免死锁" class="headerlink" title="关于避免死锁"></a>关于避免死锁</h1><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="bullet">1.</span> 避免滥用锁，程序里用的锁少，写出死锁 Bug 的几率自然就低。</span><br><span class="line"><span class="bullet">2.</span> 对于同一把锁，加锁和解锁必须要放在同一个方法中，这样一次加锁对应一次解锁，代</span><br><span class="line">码清晰简单，便于分析问题。</span><br><span class="line"><span class="bullet">3.</span> 尽量避免在持有一把锁的情况下，去获取另外一把锁，就是要尽量避免同时持有多把</span><br><span class="line">锁。</span><br><span class="line"><span class="bullet">4.</span> 如果需要持有多把锁，一定要注意加解锁的顺序，解锁的顺序要和加锁顺序相反。比</span><br><span class="line">如，获取三把锁的顺序是 A、B、C，释放锁的顺序必须是 C、B、A。</span><br><span class="line"><span class="bullet">5.</span> 给你程序中所有的锁排一个顺序，在所有需要加锁的地方，按照同样的顺序加解锁。比</span><br><span class="line">如我刚刚举的那个例子，如果两个线程都按照先获取 lockA 再获取 lockB 的顺序加</span><br><span class="line">锁，就不会产生死锁。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
         
             <div class="donate-container">
     <div class="donate-button">
@@ -161,7 +167,7 @@
     </div>
 </div>
         
-        <br>
+        <br />
         <div id="comment-container">
         </div>
         <div id="disqus_thread"></div>
@@ -194,7 +200,7 @@
 
         
         <li>
-            <a target="_blank" href="https://github.com/small-teenager">
+            <a target="_blank"  href="https://github.com/small-teenager">
                             <span class="fa-stack fa-lg">
                                 <i class="iconfont icon-github"></i>
                             </span>
@@ -203,24 +209,16 @@
         
 
         
-        <li>
-            <a target="_blank" href="https://www.linkedin.com/in/yaodong-zhang-51592714a">
-                            <span class="fa-stack fa-lg">
-                                <i class="iconfont icon-linkedin"></i>
-                            </span>
-            </a>
-        </li>
-        
 
     </ul>
     
     <p>
         <span>/</span>
         
-        <span><a href="http://melye.github.io/">Melye</a></span>
+        <span><a target="_blank" rel="noopener" href="http://melye.github.io/">Melye</a></span>
         <span>/</span>
         
-        <span><a href="https://niexiaotao.com">Xiaotao&#39;s Page</a></span>
+        <span><a target="_blank" rel="noopener" href="https://niexiaotao.com">Xiaotao&#39;s Page</a></span>
         <span>/</span>
         
         <span><a href="#">It helps SEO</a></span>
@@ -235,7 +233,7 @@
         <span id="busuanzi_container_site_uv">
             <span id="busuanzi_value_site_uv"></span>UV
         </span>
-        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
 </footer>
 
 
@@ -250,10 +248,14 @@
     window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
 <script src="/js/index.js"></script>
+
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
+
 <script src="/js/gitment.js"></script>
+
 <script>
     var gitment = new Gitment({
         id: '死锁发生条件及如何避免',

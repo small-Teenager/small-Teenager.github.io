@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Search的博客">
-    <meta name="keyword" content="">
+    <meta name="keyword"  content="">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
     <title>
@@ -16,13 +16,17 @@
     </title>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/aircloud.css">
-    <link rel="stylesheet" href="/css/gitment.css">
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
     <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
     <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
     <!-- ga & ba script hoook -->
     <script></script>
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
 
@@ -45,7 +49,7 @@
 <div class="nav" id="nav">
     <div class="avatar-name">
         <div class="avatar">
-            <img src="/img/avatar.png">
+            <img src="/img/avatar.png" />
         </div>
         <div class="name">
             <i>Search</i>
@@ -53,25 +57,25 @@
     </div>
     <div class="contents" id="nav-content">
         <ul>
-            <li>
+            <li >
                 <a href="/">
                     <i class="iconfont icon-shouye1"></i>
                     <span>主页</span>
                 </a>
             </li>
-            <li>
+            <li >
                 <a href="/tags">
                     <i class="iconfont icon-biaoqian1"></i>
                     <span>标签</span>
                 </a>
             </li>
-            <li>
+            <li >
                 <a href="/archive">
                     <i class="iconfont icon-guidang2"></i>
                     <span>存档</span>
                 </a>
             </li>
-            <li>
+            <li >
                 <a href="/about/">
                     <i class="iconfont icon-guanyu2"></i>
                     <span>关于</span>
@@ -89,7 +93,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1、RDB和AOF两种持久化机制的介绍"><span class="toc-text">1、RDB和AOF两种持久化机制的介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2、RDB持久化机制的优点"><span class="toc-text">2、RDB持久化机制的优点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3、RDB持久化机制的缺点"><span class="toc-text">3、RDB持久化机制的缺点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4、AOF持久化机制的优点"><span class="toc-text">4、AOF持久化机制的优点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5、AOF持久化机制的缺点"><span class="toc-text">5、AOF持久化机制的缺点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6、RDB和AOF到底该如何选择"><span class="toc-text">6、RDB和AOF到底该如何选择</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1%E3%80%81RDB%E5%92%8CAOF%E4%B8%A4%E7%A7%8D%E6%8C%81%E4%B9%85%E5%8C%96%E6%9C%BA%E5%88%B6%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="toc-text">1、RDB和AOF两种持久化机制的介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%E3%80%81RDB%E6%8C%81%E4%B9%85%E5%8C%96%E6%9C%BA%E5%88%B6%E7%9A%84%E4%BC%98%E7%82%B9"><span class="toc-text">2、RDB持久化机制的优点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3%E3%80%81RDB%E6%8C%81%E4%B9%85%E5%8C%96%E6%9C%BA%E5%88%B6%E7%9A%84%E7%BC%BA%E7%82%B9"><span class="toc-text">3、RDB持久化机制的缺点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4%E3%80%81AOF%E6%8C%81%E4%B9%85%E5%8C%96%E6%9C%BA%E5%88%B6%E7%9A%84%E4%BC%98%E7%82%B9"><span class="toc-text">4、AOF持久化机制的优点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5%E3%80%81AOF%E6%8C%81%E4%B9%85%E5%8C%96%E6%9C%BA%E5%88%B6%E7%9A%84%E7%BC%BA%E7%82%B9"><span class="toc-text">5、AOF持久化机制的缺点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6%E3%80%81RDB%E5%92%8CAOF%E5%88%B0%E5%BA%95%E8%AF%A5%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9"><span class="toc-text">6、RDB和AOF到底该如何选择</span></a></li></ol>
 </div>
     
 </div>
@@ -99,7 +103,7 @@
     <div class="search-container">
         <div class="search-input">
             <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
-            <input id="search-input">
+            <input id="search-input"/>
             <span id="begin-search">搜索</span>
         </div>
         <div class="search-result-container" id="search-result-container">
@@ -134,7 +138,7 @@
         </span>
         <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
 </span>
-
+</span>
     </div>
     <div class="post-content ">
         <p>持久化主要是做灾难恢复，数据恢复，也可以归类到高可用的一个环节里面去</p>
@@ -143,7 +147,7 @@
 <p>很可能说，大量的请求过来，缓存全部无法命中，在redis里根本找不到数据，这个时候就死定了，缓存雪崩问题，所有请求，没有在redis命中，就会去数据库这种数据源头中去找，一下子数据库承接高并发，然后就挂了<br>数据库挂掉，你都没法去找数据恢复到redis里面去，redis的数据从哪儿来？从数据库来。。。</p>
 <p>如果你把redis的持久化做好，那么即使你的redis故障了，也可以通过备份数据，快速恢复，一旦恢复立即对外提供服务</p>
 <p>redis持久化：RDB，AOF</p>
-<p><img src="/img/imgs/RDB和AOF的介绍.png" alt="">  </p>
+<p><img src="/img/imgs/RDB%E5%92%8CAOF%E7%9A%84%E4%BB%8B%E7%BB%8D.png">  </p>
 <h1 id="1、RDB和AOF两种持久化机制的介绍"><a href="#1、RDB和AOF两种持久化机制的介绍" class="headerlink" title="1、RDB和AOF两种持久化机制的介绍"></a>1、RDB和AOF两种持久化机制的介绍</h1><p>RDB持久化机制，对redis中的数据执行周期性的持久化</p>
 <p>AOF机制对每条写入命令作为日志，以append-only的模式写入一个日志文件中，在redis重启的时候，可以通过回放AOF日志中的写入指令来重新构建整个数据集</p>
 <p>如果我们想要redis仅仅作为纯内存的缓存来用，那么可以禁止RDB和AOF所有的持久化机制</p>
@@ -154,7 +158,8 @@
 <p>（2）RDB对redis对外提供的读写服务，影响非常小，可以让redis保持高性能，因为redis主进程只需要fork一个子进程，让子进程执行磁盘IO操作来进行RDB持久化即可</p>
 <p>（3）相对于AOF持久化机制来说，直接基于RDB数据文件来重启和恢复redis进程，更加快速</p>
 <pre><code>结合上述优点，RDB特别适合做冷备份，冷备
-</code></pre><h1 id="3、RDB持久化机制的缺点"><a href="#3、RDB持久化机制的缺点" class="headerlink" title="3、RDB持久化机制的缺点"></a>3、RDB持久化机制的缺点</h1><p>（1）如果想要在redis故障时，尽可能少的丢失数据，那么RDB没有AOF好。一般来说，RDB数据快照文件，都是每隔5分钟，或者更长时间生成一次，这个时候就得接受一旦redis进程宕机，那么会丢失最近5分钟的数据</p>
+</code></pre>
+<h1 id="3、RDB持久化机制的缺点"><a href="#3、RDB持久化机制的缺点" class="headerlink" title="3、RDB持久化机制的缺点"></a>3、RDB持久化机制的缺点</h1><p>（1）如果想要在redis故障时，尽可能少的丢失数据，那么RDB没有AOF好。一般来说，RDB数据快照文件，都是每隔5分钟，或者更长时间生成一次，这个时候就得接受一旦redis进程宕机，那么会丢失最近5分钟的数据</p>
 <p>（2）RDB每次在fork子进程来执行RDB快照数据文件生成的时候，如果数据文件特别大，可能会导致对客户端提供的服务暂停数毫秒，或者甚至数秒</p>
 <h1 id="4、AOF持久化机制的优点"><a href="#4、AOF持久化机制的优点" class="headerlink" title="4、AOF持久化机制的优点"></a>4、AOF持久化机制的优点</h1><p>（1）AOF可以更好的保护数据不丢失，一般AOF会每隔1秒，通过一个后台线程执行一次fsync操作，最多丢失1秒钟的数据</p>
 <p>（2）AOF日志文件以append-only模式写入，所以没有任何磁盘寻址的开销，写入性能非常高，而且文件不容易破损，即使文件尾部破损，也很容易修复</p>
@@ -162,7 +167,7 @@
 <p>（4）AOF日志文件的命令通过非常可读的方式进行记录，这个特性非常适合做灾难性的误删除的紧急恢复。比如某人不小心用flushall命令清空了所有数据，只要这个时候后台rewrite还没有发生，那么就可以立即拷贝AOF文件，将最后一条flushall命令给删了，然后再将该AOF文件放回去，就可以通过恢复机制，自动恢复所有数据</p>
 <h1 id="5、AOF持久化机制的缺点"><a href="#5、AOF持久化机制的缺点" class="headerlink" title="5、AOF持久化机制的缺点"></a>5、AOF持久化机制的缺点</h1><p>（1）对于同一份数据来说，AOF日志文件通常比RDB数据快照文件更大</p>
 <p>（2）AOF开启后，支持的写QPS会比RDB支持的写QPS低，因为AOF一般会配置成每秒fsync一次日志文件，当然，每秒一次fsync，性能也还是很高的</p>
-<p>（3）以前AOF发生过bug，就是通过AOF记录的日志，进行数据恢复的时候，没有恢复一模一样的数据出来。所以说，类似AOF这种较为复杂的基于命令日志/merge/回放的方式，比基于RDB每次持久化一份完整的数据快照文件的方式，更加脆弱一些，容易有bug。不过AOF就是为了避免rewrite过程导致的bug，因此每次rewrite并不是基于旧的指令日志进行merge的，而是基于当时内存中的数据进行指令的重新构建，这样健壮性会好很多。</p>
+<p>（3）以前AOF发生过bug，就是通过AOF记录的日志，进行数据恢复的时候，没有恢复一模一样的数据出来。所以说，类似AOF这种较为复杂的基于命令日志&#x2F;merge&#x2F;回放的方式，比基于RDB每次持久化一份完整的数据快照文件的方式，更加脆弱一些，容易有bug。不过AOF就是为了避免rewrite过程导致的bug，因此每次rewrite并不是基于旧的指令日志进行merge的，而是基于当时内存中的数据进行指令的重新构建，这样健壮性会好很多。</p>
 <h1 id="6、RDB和AOF到底该如何选择"><a href="#6、RDB和AOF到底该如何选择" class="headerlink" title="6、RDB和AOF到底该如何选择"></a>6、RDB和AOF到底该如何选择</h1><p>（1）不要仅仅使用RDB，因为那样会导致你丢失很多数据</p>
 <p>（2）也不要仅仅使用AOF，因为那样有两个问题，第一，你通过AOF做冷备，没有RDB做冷备，来的恢复速度更快; 第二，RDB每次简单粗暴生成数据快照，更加健壮，可以避免AOF这种复杂的备份和恢复机制的bug</p>
 <p>（3）综合使用AOF和RDB两种持久化机制，用AOF来保证数据不丢失，作为数据恢复的第一选择; 用RDB来做不同程度的冷备，在AOF文件都丢失或损坏不可用的时候，还可以使用RDB来进行快速的数据恢复</p>
@@ -178,7 +183,7 @@
     </div>
 </div>
         
-        <br>
+        <br />
         <div id="comment-container">
         </div>
         <div id="disqus_thread"></div>
@@ -211,7 +216,7 @@
 
         
         <li>
-            <a target="_blank" href="https://github.com/small-teenager">
+            <a target="_blank"  href="https://github.com/small-teenager">
                             <span class="fa-stack fa-lg">
                                 <i class="iconfont icon-github"></i>
                             </span>
@@ -220,24 +225,16 @@
         
 
         
-        <li>
-            <a target="_blank" href="https://www.linkedin.com/in/yaodong-zhang-51592714a">
-                            <span class="fa-stack fa-lg">
-                                <i class="iconfont icon-linkedin"></i>
-                            </span>
-            </a>
-        </li>
-        
 
     </ul>
     
     <p>
         <span>/</span>
         
-        <span><a href="http://melye.github.io/">Melye</a></span>
+        <span><a target="_blank" rel="noopener" href="http://melye.github.io/">Melye</a></span>
         <span>/</span>
         
-        <span><a href="https://niexiaotao.com">Xiaotao&#39;s Page</a></span>
+        <span><a target="_blank" rel="noopener" href="https://niexiaotao.com">Xiaotao&#39;s Page</a></span>
         <span>/</span>
         
         <span><a href="#">It helps SEO</a></span>
@@ -252,7 +249,7 @@
         <span id="busuanzi_container_site_uv">
             <span id="busuanzi_value_site_uv"></span>UV
         </span>
-        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
 </footer>
 
 
@@ -267,10 +264,14 @@
     window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
 <script src="/js/index.js"></script>
+
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
+
 <script src="/js/gitment.js"></script>
+
 <script>
     var gitment = new Gitment({
         id: 'Redis的AOF与RDB对比',

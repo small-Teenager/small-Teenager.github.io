@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Search的博客">
-    <meta name="keyword" content="">
+    <meta name="keyword"  content="">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
     <title>
@@ -16,13 +16,17 @@
     </title>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/aircloud.css">
-    <link rel="stylesheet" href="/css/gitment.css">
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
     <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
     <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
     <!-- ga & ba script hoook -->
     <script></script>
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
 
@@ -45,7 +49,7 @@
 <div class="nav" id="nav">
     <div class="avatar-name">
         <div class="avatar">
-            <img src="/img/avatar.png">
+            <img src="/img/avatar.png" />
         </div>
         <div class="name">
             <i>Search</i>
@@ -53,25 +57,25 @@
     </div>
     <div class="contents" id="nav-content">
         <ul>
-            <li>
+            <li >
                 <a href="/">
                     <i class="iconfont icon-shouye1"></i>
                     <span>主页</span>
                 </a>
             </li>
-            <li>
+            <li >
                 <a href="/tags">
                     <i class="iconfont icon-biaoqian1"></i>
                     <span>标签</span>
                 </a>
             </li>
-            <li>
+            <li >
                 <a href="/archive">
                     <i class="iconfont icon-guidang2"></i>
                     <span>存档</span>
                 </a>
             </li>
-            <li>
+            <li >
                 <a href="/about/">
                     <i class="iconfont icon-guanyu2"></i>
                     <span>关于</span>
@@ -89,7 +93,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1）生产者弄丢了数据"><span class="toc-text">1）生产者弄丢了数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2）rabbitmq弄丢了数据"><span class="toc-text">2）rabbitmq弄丢了数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3）消费端弄丢了数据"><span class="toc-text">3）消费端弄丢了数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4）小结"><span class="toc-text">4）小结</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1%EF%BC%89%E7%94%9F%E4%BA%A7%E8%80%85%E5%BC%84%E4%B8%A2%E4%BA%86%E6%95%B0%E6%8D%AE"><span class="toc-text">1）生产者弄丢了数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%EF%BC%89rabbitmq%E5%BC%84%E4%B8%A2%E4%BA%86%E6%95%B0%E6%8D%AE"><span class="toc-text">2）rabbitmq弄丢了数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3%EF%BC%89%E6%B6%88%E8%B4%B9%E7%AB%AF%E5%BC%84%E4%B8%A2%E4%BA%86%E6%95%B0%E6%8D%AE"><span class="toc-text">3）消费端弄丢了数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4%EF%BC%89%E5%B0%8F%E7%BB%93"><span class="toc-text">4）小结</span></a></li></ol>
 </div>
     
 </div>
@@ -99,7 +103,7 @@
     <div class="search-container">
         <div class="search-input">
             <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
-            <input id="search-input">
+            <input id="search-input"/>
             <span id="begin-search">搜索</span>
         </div>
         <div class="search-result-container" id="search-result-container">
@@ -134,7 +138,7 @@
         </span>
         <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
 </span>
-
+</span>
     </div>
     <div class="post-content ">
         <blockquote>
@@ -156,7 +160,8 @@
 <h1 id="3）消费端弄丢了数据"><a href="#3）消费端弄丢了数据" class="headerlink" title="3）消费端弄丢了数据"></a>3）消费端弄丢了数据</h1><p>rabbitmq如果丢失了数据，主要是因为你消费的时候，刚消费到，还没处理，结果进程挂了，比如重启了，那么就尴尬了，rabbitmq认为你都消费了，这数据就丢了。</p>
 <p>这个时候得用rabbitmq提供的ack机制，简单来说，就是你关闭rabbitmq自动ack，可以通过一个api来调用就行，然后每次你自己代码里确保处理完的时候，再程序里ack一把。这样的话，如果你还没处理完，不就没有ack？那rabbitmq就认为你还没处理完，这个时候rabbitmq会把这个消费分配给别的consumer去处理，消息是不会丢的。</p>
 <h1 id="4）小结"><a href="#4）小结" class="headerlink" title="4）小结"></a>4）小结</h1><p>消息队列是如何确保消息的可靠<br>性，不会丢失的。这个过程可以分为分三个阶段，每个阶段都需要正确的编写代码并且设置<br>正确的配置项，才能配合消息队列的可靠性机制，确保消息不会丢失。</p>
-<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">在生产阶段，需要捕获消息发送的错误，并重发消息。</span><br><span class="line">在存储阶段，可以通过配置刷盘和复制相关的参数，让消息写入到多个副本的磁盘上，</span><br><span class="line">来确保消息不会因为某个 <span class="keyword">Broker </span>宕机或者磁盘损坏而丢失。</span><br><span class="line">在消费阶段，你需要在处理完全部消费业务逻辑之后，再发送消费确认。</span><br></pre></td></tr></table></figure>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">在生产阶段，需要捕获消息发送的错误，并重发消息。</span><br><span class="line">在存储阶段，可以通过配置刷盘和复制相关的参数，让消息写入到多个副本的磁盘上，</span><br><span class="line">来确保消息不会因为某个 <span class="keyword">Broker </span>宕机或者磁盘损坏而丢失。</span><br><span class="line">在消费阶段，你需要在处理完全部消费业务逻辑之后，再发送消费确认。</span><br></pre></td></tr></table></figure>
+
 <p>在理解了这几个阶段的原理后，如果再出现丢消息的情况，可以通过在代码中加一些<br>日志的方式，很快定位到是哪个阶段出了问题，然后再进一步深入分析，快速找到问题原<br>因。</p>
 
         
@@ -170,7 +175,7 @@
     </div>
 </div>
         
-        <br>
+        <br />
         <div id="comment-container">
         </div>
         <div id="disqus_thread"></div>
@@ -203,7 +208,7 @@
 
         
         <li>
-            <a target="_blank" href="https://github.com/small-teenager">
+            <a target="_blank"  href="https://github.com/small-teenager">
                             <span class="fa-stack fa-lg">
                                 <i class="iconfont icon-github"></i>
                             </span>
@@ -212,24 +217,16 @@
         
 
         
-        <li>
-            <a target="_blank" href="https://www.linkedin.com/in/yaodong-zhang-51592714a">
-                            <span class="fa-stack fa-lg">
-                                <i class="iconfont icon-linkedin"></i>
-                            </span>
-            </a>
-        </li>
-        
 
     </ul>
     
     <p>
         <span>/</span>
         
-        <span><a href="http://melye.github.io/">Melye</a></span>
+        <span><a target="_blank" rel="noopener" href="http://melye.github.io/">Melye</a></span>
         <span>/</span>
         
-        <span><a href="https://niexiaotao.com">Xiaotao&#39;s Page</a></span>
+        <span><a target="_blank" rel="noopener" href="https://niexiaotao.com">Xiaotao&#39;s Page</a></span>
         <span>/</span>
         
         <span><a href="#">It helps SEO</a></span>
@@ -244,7 +241,7 @@
         <span id="busuanzi_container_site_uv">
             <span id="busuanzi_value_site_uv"></span>UV
         </span>
-        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
 </footer>
 
 
@@ -259,10 +256,14 @@
     window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
 <script src="/js/index.js"></script>
+
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
+
 <script src="/js/gitment.js"></script>
+
 <script>
     var gitment = new Gitment({
         id: '如何保障消息的可靠性传输',
