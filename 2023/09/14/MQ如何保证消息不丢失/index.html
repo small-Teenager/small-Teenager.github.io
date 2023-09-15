@@ -11,7 +11,7 @@
 
     <title>
         
-        Search的博客 | Search&#39;s Blog
+        MQ如何保证消息不丢失 - Search的博客 | Search&#39;s Blog
         
     </title>
 
@@ -57,7 +57,7 @@
     </div>
     <div class="contents" id="nav-content">
         <ul>
-            <li  class=active >
+            <li >
                 <a href="/">
                     <i class="iconfont icon-shouye1"></i>
                     <span>主页</span>
@@ -92,6 +92,10 @@
         </ul>
     </div>
     
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Producer"><span class="toc-text">Producer</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Server"><span class="toc-text">Server</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Consumer"><span class="toc-text">Consumer</span></a></li></ol>
+</div>
+    
 </div>
 
 
@@ -115,178 +119,66 @@
     <div class="index-middle">
         <!-- Main Content -->
         
-<div class="post-preview-container" style="min-height: 576px">
-    
-    <div class="post-preview">
-        <div class="post-time">2023-09-14</div>
-        <div class="post-info">
-            <a href="/2023/09/14/MQ如何保证消息不丢失/">
-                <h3>
-                    MQ如何保证消息不丢失
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#MQ" title="MQ">MQ</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2023-09-10</div>
-        <div class="post-info">
-            <a href="/2023/09/10/Spring事务失效场景/">
-                <h3>
-                    Spring事务失效场景
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#事务失效" title="事务失效">事务失效</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2019-12-16</div>
-        <div class="post-info">
-            <a href="/2019/12/16/Github-骚操作/">
-                <h3>
-                    Github 骚操作
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#Github" title="Github">Github</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2019-11-19</div>
-        <div class="post-info">
-            <a href="/2019/11/19/死锁发生条件及如何避免/">
-                <h3>
-                    死锁发生条件及如何避免
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#锁" title="锁">锁</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2019-11-13</div>
-        <div class="post-info">
-            <a href="/2019/11/13/redis主从复制原理、断点续传、无磁盘化复制、过期key处理/">
-                <h3>
-                    redis主从复制原理、断点续传、无磁盘化复制、过期key处理
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#Redis" title="Redis">Redis</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2019-11-13</div>
-        <div class="post-info">
-            <a href="/2019/11/13/redis如何通过读写分离来承载读请求QPS超过10万-？/">
-                <h3>
-                    redis如何通过读写分离来承载读请求QPS超过10万+？
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#Redis" title="Redis">Redis</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2019-11-12</div>
-        <div class="post-info">
-            <a href="/2019/11/12/Redis的AOF与RDB对比/">
-                <h3>
-                    Redis的AOF与RDB对比
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#Redis" title="Redis">Redis</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2019-11-07</div>
-        <div class="post-info">
-            <a href="/2019/11/07/SQL优化/">
-                <h3>
-                    SQL优化
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#SQL" title="SQL">SQL</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-</div>
-<ul class="pager">
-    
-    
-    <li class="next">
-        <a href="/page/2/">Older Posts &rarr;</a>
-    </li>
-    
-</ul>
 
+
+<div class="post-container">
+    <div class="post-title">
+        MQ如何保证消息不丢失
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2023-09-14 22:57:02</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#MQ" title="MQ">MQ</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <p><img src="/img/MQ%E4%B8%A2%E5%A4%B1%E6%B6%88%E6%81%AF%E7%9A%843%E7%A7%8D%E5%9C%BA%E6%99%AF.jpg"></p>
+<h1 id="Producer"><a href="#Producer" class="headerlink" title="Producer"></a>Producer</h1><p>生产者确认机制</p>
+<p>开启MQ确认机制，消息发送到MQ以后，会返回一个结果给发送者，表示消息是否处理成功。</p>
+<p>消息失败之后如何处理呢？</p>
+<ul>
+<li>回调方法即时重发</li>
+<li>记录日志</li>
+<li>保存到数据库然后定时重发，成功发送后即刻删除表中的数据</li>
+</ul>
+<h1 id="Server"><a href="#Server" class="headerlink" title="Server"></a>Server</h1><p>消息持久化</p>
+<p>MQ开启持久化功能可以确保缓存在MQ中的消息不丢失</p>
+<p>交换机持久化 队列持久化 消息持久化</p>
+<h1 id="Consumer"><a href="#Consumer" class="headerlink" title="Consumer"></a>Consumer</h1><p>消费者处理消息后可以向MQ发送ack回执，MQ收到ack回执后才会删除该消息。</p>
+<figure class="highlight nsis"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">manual：手动ack，需要在业务代码结束后，调用api发送ack。</span><br><span class="line"><span class="literal">auto</span>：自动ack，由spring监测listener代码是否出现异常，没有异常则返回ack；抛出异常则返回nack</span><br><span class="line"><span class="literal">none</span>：关闭ack，MQ假定消费者获取消息后会成功处理，因此消息投递后立即被删除</span><br></pre></td></tr></table></figure>
+
+<p>多次重试失败后将消息投递到异常交换机，交由人工处理</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
     </div>
 </div>
 
@@ -355,13 +247,29 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.json"
     window.hexo_root = "/"
-    window.isPost = false
+    window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 
 <script src="/js/index.js"></script>
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/gitment.js"></script>
+
+<script>
+    var gitment = new Gitment({
+        id: 'MQ如何保证消息不丢失',
+        owner: 'small-Teenager',
+        repo: 'small-Teenager.github.io',
+        oauth: {
+            client_id: '0c679f56f3ec0015102b',
+            client_secret: '786e45b4d51f2847484facade3aed068f2c57e2a',
+        },
+    })
+    gitment.render('comment-container')
+</script>
 
 
 
